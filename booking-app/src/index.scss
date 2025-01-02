@@ -1,0 +1,14 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.wrapper {
+  width: calc(100% - 170px);
+  max-width: calc(1440px - (75px * 2));
+  margin-left: auto;
+  margin-right: auto;
+}

@@ -1,0 +1,35 @@
+@import '../../styles/variables';
+
+.card-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.title-hotel {
+    font-size: 24px;
+    line-height: 30px;
+    font-weight: 500;
+    color: $title-primary-color;
+}
+
+.h1-hotel {
+    font-size: 36px;
+    left: 40px;
+    font-weight: 600;
+    color: $title-primary-color;
+}
+
+.ant-card-body {
+    display: flex;
+    flex-direction: column;
+}
+
+:where(.css-dev-only-do-not-override-161f05s).ant-card .ant-card-body {
+    padding: 24px;
+    border-radius: 0 0 8px 8px;
+    display: flex !important;
+    flex-direction: column !important ;
+    gap: 5px;
+}

@@ -1,0 +1,128 @@
+@import '../../styles/variables';
+
+.header-container {
+    text-align: center;
+    color: #fff;
+    height: 100px;
+    padding: 20px 0px;
+    line-height: 64px;
+    align-items: center;
+    display: flex;
+    height: auto;
+    background-color: $background-primary-color;
+}
+
+.content {
+    text-align: center;
+    min-height: 120px;
+    line-height: 120px;
+    color: #fff;
+    background-color: #0958d9;
+}
+
+.footer-container {
+    text-align: center;
+    color: #fff;
+    padding-top: 40px;
+    padding-bottom: 25px;
+    align-items: center;
+    display: flex;
+    background-color: $background-primary-color;
+}
+
+.layout {
+    border-radius: 8px;
+    overflow: hidden;
+    width: calc(50% - 8px);
+    max-width: calc(50% - 8px);
+}
+
+.main-logo {
+    width: 144px;
+    height: 23px;
+    display: block;
+}
+
+.navlink {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 36px;
+    width: 85px;
+    border-radius: 5px;
+    border: 1px solid $background-primary-button-color;
+    background-color: #fff;
+    transition: color 0.3s, background-color 0.3s;
+
+}
+
+.button-theme {
+    color: #1677ff;
+    font-weight: 500;
+}
+
+.footer-wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-links {
+    display: flex;
+    gap: 30px;
+
+    h3 {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+
+        li {
+            margin-bottom: 5px;
+
+            a {
+                color: #fff;
+                text-decoration: none;
+                transition: color 0.3s;
+                line-height: normal;
+
+                &:hover {
+                    color: #1890ff;
+                }
+            }
+        }
+    }
+}
+
+.footer-socials {
+    text-align: center;
+
+    h3 {
+        margin-bottom: 10px;
+    }
+
+    .social-icons {
+        a {
+            color: #fff;
+            font-size: 24px;
+            margin: 0 10px;
+            transition: color 0.3s;
+
+            &:hover {
+                color: #1890ff;
+            }
+        }
+    }
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}
