@@ -1,17 +1,13 @@
+import axios from "axios";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
-const destinationUrl = 'http://localhost:3001/destination'
+const destinationUrl = process.env.REACT_APP_DESTINATION_GET_URL;
 
 export const fetchDestination = createAsyncThunk('destination/fetchDestination', async (_, { rejectWithValue }) => {
     try {
-        const response = await fetch(destinationUrl);
-
-        if (!response.ok) {
-            throw new Error('Failed to fetch destination');
-        }
-
-        return await response.json();
+        const response = await axios.get(destinationUrl);
+        return response.data;
     } catch (e) {
-        return rejectWithValue(e.message || 'Failed to fetch destination');
+        return rejectWithValue(e.response?.data?.message || e.message);
     }
 });

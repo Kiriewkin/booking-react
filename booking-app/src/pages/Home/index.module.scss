@@ -4,6 +4,7 @@
     font-size: 48px;
     font-weight: 700;
     color: #000000;
+    margin-bottom: 15px;
 
     &-span {
         color: $background-primary-color;
@@ -14,5 +15,11 @@
     padding: 20px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+}
+
+.find-destination {
+    font-size: 32px;
+    font-weight: 600;
+    color: $background-primary-color;
+    margin-bottom: 25px;
 }

@@ -1,0 +1,55 @@
+:where(.css-dev-only-do-not-override-161f05s).ant-carousel .slick-prev,
+:where(.css-dev-only-do-not-override-161f05s).ant-carousel .slick-next {
+    position: absolute;
+    top: 50%;
+    width: 40px;
+    height: 40px;
+    transform: translateY(-50%);
+    color: #fff;
+    background: #4a4a4a;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1;
+    opacity: 0.9;
+    transition: background-color 0.3s, opacity 0.3s, transform 0.3s;
+}
+
+:where(.css-dev-only-do-not-override-161f05s).ant-carousel .slick-prev::after,
+:where(.css-dev-only-do-not-override-161f05s).ant-carousel .slick-next::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    width: 12px;
+    height: 12px;
+    border: solid currentcolor;
+    border-width: 2px 2px 0 0;
+    border-radius: 1px;
+}
+
+:where(.css-dev-only-do-not-override-161f05s).ant-carousel .slick-prev::after {
+    transform: translate(-50%, -50%) rotate(-135deg);
+}
+
+:where(.css-dev-only-do-not-override-161f05s).ant-carousel .slick-next::after {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+:where(.css-dev-only-do-not-override-161f05s).ant-carousel .slick-prev:hover,
+:where(.css-dev-only-do-not-override-161f05s).ant-carousel .slick-next:hover {
+    background: #1e90ff;
+    transform: translateY(-50%) scale(1.1);
+    opacity: 1;
+}
+
+:where(.css-dev-only-do-not-override-161f05s).ant-carousel .slick-prev {
+    left: -15px;
+}
+
+:where(.css-dev-only-do-not-override-161f05s).ant-carousel .slick-next {
+    right: -15px;
+}

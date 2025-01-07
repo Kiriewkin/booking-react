@@ -25,8 +25,8 @@ export default function HotelsList() {
             ))}
 
             {hotelsToRender.length === 0 && (
-                <div>
-                    <p>{city ? `In ${city} no hotels!` : "No hotels available!"}</p>
+                <div className="no-hotels-container">
+                    <p className="no-hotels-message">{city ? `In ${city} no hotels!` : "No hotels available!"}</p>
                     <Button onClick={goBack}>Back</Button>
                 </div>
             )}

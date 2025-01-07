@@ -1,31 +1,22 @@
+import axios from "axios"
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
-const hotelsUrl = 'http://localhost:3001/hotels'
+const hotelsUrl = process.env.REACT_APP_HOTELS_GET_URL;
 
 export const fetchHotels = createAsyncThunk('hotels/fetchHotels', async (_, { rejectWithValue }) => {
     try {
-        const response = await fetch(hotelsUrl);
-
-        if (!response.ok) {
-            throw new Error('Failed to fetch hotels');
-        }
-
-        return await response.json();
+        const response = await axios.get(hotelsUrl);
+        return response.data;
     } catch (e) {
-        return rejectWithValue(e.message || 'Failed to fetch hotels');
+        return rejectWithValue(e.response?.data?.message || e.message);
     }
 });
 
 export const handleCitySelection = createAsyncThunk('hotels/handleCitySelection', async (city, { rejectWithValue }) => {
     try {
-        const response = await fetch(`http://localhost:3001/hotels/${city}`);
-
-        if (!response.ok) {
-            throw new Error("Failed to fetch hotels");
-        }
-
-        return await response.json();
+        const response = await axios.get(`${process.env.REACT_APP_HOTELS_GET_URL}/${city}`);
+        return response.data;
     } catch (e) {
-        return rejectWithValue(e.message || 'Failed to fetch hotels');
+        return rejectWithValue(e.response?.data?.message || e.message);
     }
 });

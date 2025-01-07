@@ -1,4 +1,4 @@
-import { Outlet, NavLink } from "react-router-dom";
+import { Outlet, NavLink, Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { FacebookOutlined, TwitterOutlined, InstagramOutlined } from "@ant-design/icons";
 import { Flex, Layout } from "antd";
@@ -30,24 +30,23 @@ export default function MyLayout() {
                         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 15 }}>
                             <NavLink to="/" className={styles.navlink} >Home</NavLink>
                             <NavLink to="/hotels" className={styles.navlink} onClick={handleHotelsClick} >Hotels</NavLink>
-                            <NavLink to="/aboutus" className={styles.navlink} >About us</NavLink>
-                            <button className={`${styles.navlink} ${styles['button-theme']}`}>Change Theme</button>
+                            <NavLink to="/aboutus/aboutbooking" className={styles.navlink} >About us</NavLink>
                         </div>
                     </div>
                 </Header >
-                <Content style={{minHeight: "100vh"}}>
+                <Content style={{ minHeight: "100vh" }}>
                     <div className="wrapper">
                         <Outlet />
                     </div>
                 </Content>
                 <Footer className={styles['footer-container']}>
-                    <div className="wrapper" style={{ display: "flex", flexDirection:"column", gap: 15 }}>
-                        <div style={{display:"flex", justifyContent:"space-between"}}>
+                    <div className="wrapper" style={{ display: "flex", flexDirection: "column", gap: 15 }}>
+                        <div style={{ display: "flex", justifyContent: "space-between" }}>
                             <div className={styles['footer-links']}>
                                 <div>
                                     <h3>About Us</h3>
                                     <ul>
-                                        <li><a href="/about">Company</a></li>
+                                        <li><Link to="/aboutus/aboutbooking">Company</Link></li>
                                         <li><a href="/team">Team</a></li>
                                         <li><a href="/careers">Careers</a></li>
                                     </ul>
@@ -57,14 +56,14 @@ export default function MyLayout() {
                                     <ul>
                                         <li><a href="/help">Help Center</a></li>
                                         <li><a href="/faq">FAQs</a></li>
-                                        <li><a href="/contact">Contact Us</a></li>
+                                        <li><Link to="/aboutus/contact">Contact us</Link></li>
                                     </ul>
                                 </div>
                                 <div>
                                     <h3>Legal</h3>
                                     <ul>
-                                        <li><a href="/terms">Terms & Conditions</a></li>
-                                        <li><a href="/privacy">Privacy Policy</a></li>
+                                        <li><Link to="/aboutus/terms">Terms & Conditions</Link></li>
+                                        <li><Link to="/aboutus/legal">Legal</Link></li>
                                     </ul>
                                 </div>
                             </div>

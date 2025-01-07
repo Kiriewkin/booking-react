@@ -7,7 +7,7 @@
     align-items: flex-start;
 }
 
-.title-hotel {
+.hotel-title {
     font-size: 24px;
     line-height: 30px;
     font-weight: 500;
@@ -32,4 +32,39 @@
     display: flex !important;
     flex-direction: column !important ;
     gap: 5px;
+}
+
+.hotel-address,
+.hotel-city,
+.hotel-country-code {
+    margin: 4px 0;
+    font-size: 14px;
+    color: #555;
+}
+
+.hotel-phone,
+.hotel-website {
+    display: block;
+    margin: 4px 0;
+    color: #1890ff;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.hotel-rating {
+    margin-top: 8px;
+}
+
+.no-hotels-container {
+    text-align: center;
+    padding: 20px;
+}
+
+.no-hotels-message {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 20px;
 }
