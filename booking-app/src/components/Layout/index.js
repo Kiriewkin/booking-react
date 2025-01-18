@@ -30,6 +30,7 @@ export default function MyLayout() {
                         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 15 }}>
                             <NavLink to="/" className={styles.navlink} >Home</NavLink>
                             <NavLink to="/hotels" className={styles.navlink} onClick={handleHotelsClick} >Hotels</NavLink>
+                            <NavLink to="/favorites" className={styles.navlink}>Favorites</NavLink>
                             <NavLink to="/aboutus/aboutbooking" className={styles.navlink} >About us</NavLink>
                         </div>
                     </div>

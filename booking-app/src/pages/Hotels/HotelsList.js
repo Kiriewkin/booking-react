@@ -6,8 +6,7 @@ import HotelsItem from "./HotelsItem";
 
 export default function HotelsList() {
     const { city } = useParams();
-    const hotels = useSelector((state) => state.hotels.hotels);
-    const cityHotels = useSelector((state) => state.hotels.city);
+    const { hotels, city: cityHotels } = useSelector((state) => state.hotels);
 
     const hotelsToRender = city ? cityHotels : hotels;
 

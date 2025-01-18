@@ -1,14 +1,16 @@
 import React from "react";
 import { createBrowserRouter, RouterProvider, Navigate } from "react-router-dom";
 
+import { hotelsLoader } from "./loaders/hotelsLoader";
+
 import MyLayout from "./components/Layout";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Hotels from "./pages/Hotels";
+import HotelsDetails from "./pages/Hotels/HotelDetails";
 import NotFound from "./pages/NotFound";
 import { Legal, Terms, Contact, AboutBooking } from "./pages/About";
-
-import "./App.scss";
+import Favorites from "./pages/Favorites";
 
 const router = createBrowserRouter([
   {
@@ -22,11 +24,16 @@ const router = createBrowserRouter([
       },
       {
         path: "/hotels",
-        element: <Hotels />
+        element: <Hotels />,
+        loader: hotelsLoader
       },
       {
         path: "/hotels/:city",
         element: <Hotels />
+      },
+      {
+        path: "/hotel/:name",
+        element: <HotelsDetails />
       },
       {
         path: "/aboutus",
@@ -53,6 +60,10 @@ const router = createBrowserRouter([
             element: <Contact />
           },
         ]
+      },
+      {
+        path: "/favorites",
+        element: <Favorites/>
       },
       {
         path: "*",

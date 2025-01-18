@@ -1,6 +1,8 @@
 import { useSelector } from "react-redux";
 import { Col, Carousel, Spin } from "antd";
+
 import DestinationItem from "./DestinationItem";
+
 import styles from "./index.module.scss";
 
 export default function DestinationList() {

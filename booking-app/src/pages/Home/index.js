@@ -1,4 +1,4 @@
-import DestinationList from "../../components/DestinationList/DestinationList";
+import DestinationList from "./DestinationList/DestinationList";
 import SearchForm from "../../components/SearchForm";
 
 import styles from "./index.module.scss";

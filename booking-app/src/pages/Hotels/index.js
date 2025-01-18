@@ -3,7 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { Spin } from "antd";
 
-import { fetchHotels, handleCitySelection } from "../../store/thunks/hotelsThunk";
+import { handleCitySelection } from "../../store/thunks/hotelsThunk";
+import { capitalizeFirstLetter } from "../../utils/helpers";
 import HotelsList from "./HotelsList";
 
 import "./index.scss"
@@ -16,12 +17,8 @@ export default function Hotels() {
     useEffect(() => {
         if (city) {
             dispatch(handleCitySelection(city));
-        } else {
-            dispatch(fetchHotels());
         }
     }, [dispatch, city]);
-
-    function capitalizeFirstLetter(string) { return string.charAt(0).toUpperCase() + string.slice(1)};
 
     if (loading) {
         return <div><p>Loading...</p><Spin size="large" /></div>;
