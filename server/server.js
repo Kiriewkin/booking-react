@@ -21,10 +21,16 @@ app.post('/hotels', (req, res) => {
     res.json(hotels);
 });
 
-app.get('/hotels/:city', (req, res) => {
+app.get('/hotels/city/:city', (req, res) => {
     const { city } = req.params;
     const hotels = data.hotels.filter((hotel) => hotel.city === city);
     res.json(hotels);
+});
+
+app.get('/hotels/name/:name', (req, res) => {
+    const { name } = req.params;
+    const hotel = data.hotels.filter((hotel) => hotel.name === name);
+    res.json(hotel);
 });
 
 const PORT = 3001;
