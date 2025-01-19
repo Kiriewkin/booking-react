@@ -33,7 +33,7 @@ export default function HotelsItem({ hotel = { hotel_rating: 0, phone_number: nu
     };
 
     const handleCardClick = () => {
-        navigate(`/hotel/${hotel.name}`);
+        navigate(`/booking-react/hotel/${hotel.name}`);
     };
 
     return (

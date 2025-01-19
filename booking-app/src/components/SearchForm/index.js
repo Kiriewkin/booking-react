@@ -40,7 +40,7 @@ export default function SearchForm() {
         console.log(newReq);
 
         if (values.destination) {
-            navigate(`/hotels/${values.destination}`);
+            navigate(`hotels/${values.destination}`);
         } else {
             console.error("Destination not selected!");
         }

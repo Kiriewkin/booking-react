@@ -14,68 +14,67 @@ import Favorites from "./pages/Favorites";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/booking-react",
     element: <MyLayout />,
     errorElement: <div>Something went wrong!</div>,
     children: [
       {
         index: true,
-        element: <Home />
+        element: <Home />,
       },
       {
-        path: "/hotels",
+        path: "hotels",
         element: <Hotels />,
-        loader: hotelsLoader
-      },
-      {
-        path: "/hotels/:city",
-        element: <Hotels />
-      },
-      {
-        path: "/hotel/:name",
-        element: <HotelsDetails />
-      },
-      {
-        path: "/aboutus",
-        element: <About />,
+        loader: hotelsLoader,
         children: [
           {
-            index: true,
-            element: <Navigate to="/aboutus/aboutbooking" replace={true} />
-          },
-          {
-            path: "/aboutus/aboutbooking",
-            element: <AboutBooking/>,
-          },
-          {
-            path: "/aboutus/legal",
-            element: <Legal />
-          },
-          {
-            path: "/aboutus/terms",
-            element: <Terms />
-          },
-          {
-            path: "/aboutus/contact",
-            element: <Contact />
+            path: ":city",
+            element: <Hotels />,
           },
         ]
       },
       {
-        path: "/favorites",
-        element: <Favorites/>
+        path: "hotel/:name",
+        element: <HotelsDetails />,
+      },
+      {
+        path: "aboutus",
+        element: <About />,
+        children: [
+          {
+            index: true,
+            element: <Navigate to="aboutbooking" replace={true} />,
+          },
+          {
+            path: "aboutbooking",
+            element: <AboutBooking />,
+          },
+          {
+            path: "legal",
+            element: <Legal />,
+          },
+          {
+            path: "terms",
+            element: <Terms />,
+          },
+          {
+            path: "contact",
+            element: <Contact />,
+          },
+        ],
+      },
+      {
+        path: "favorites",
+        element: <Favorites />,
       },
       {
         path: "*",
-        element: <NotFound />
-      }
-    ]
-  }
-])
+        element: <NotFound />,
+      },
+    ],
+  },
+]);
 
 export default function App() {
-
-  return (
-    <RouterProvider router={router} />
-  );
+  return <RouterProvider router={router} />;
 }

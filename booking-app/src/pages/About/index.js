@@ -16,7 +16,7 @@ export default function About() {
                     <ul>
                         <li>
                             <NavLink
-                                to="/aboutus/aboutbooking"
+                                to="aboutbooking"
                                 className={({ isActive }) =>
                                     isActive ? styles["about-active-link"] : ""
                                 }
@@ -26,7 +26,7 @@ export default function About() {
                         </li>
                         <li>
                             <NavLink
-                                to="/aboutus/legal"
+                                to="legal"
                                 className={({ isActive }) =>
                                     isActive ? styles["about-active-link"] : ""
                                 }
@@ -36,7 +36,7 @@ export default function About() {
                         </li>
                         <li>
                             <NavLink
-                                to="/aboutus/contact"
+                                to="contact"
                                 className={({ isActive }) =>
                                     isActive ? styles["about-active-link"] : ""
                                 }
@@ -46,7 +46,7 @@ export default function About() {
                         </li>
                         <li>
                             <NavLink
-                                to="/aboutus/terms"
+                                to="terms"
                                 className={({ isActive }) =>
                                     isActive ? styles["about-active-link"] : ""
                                 }

@@ -7,7 +7,7 @@ export default function DestinationItem({ city }) {
     const navigate = useNavigate()
 
     const handleCardClick = () => {
-        navigate(`/hotels/${city.label}`);
+        navigate(`hotels/${city.label}`);
     }
 
     return (

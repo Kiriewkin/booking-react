@@ -23,15 +23,15 @@ export default function MyLayout() {
                 <Header className={styles['header-container']}>
                     <div className="wrapper" style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                         <div>
-                            <NavLink to="/" >
+                            <NavLink to="" >
                                 <img src={logo} alt="logo" className={styles['main-logo']} />
                             </NavLink>
                         </div>
                         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 15 }}>
-                            <NavLink to="/" className={styles.navlink} >Home</NavLink>
-                            <NavLink to="/hotels" className={styles.navlink} onClick={handleHotelsClick} >Hotels</NavLink>
-                            <NavLink to="/favorites" className={styles.navlink}>Favorites</NavLink>
-                            <NavLink to="/aboutus/aboutbooking" className={styles.navlink} >About us</NavLink>
+                            <NavLink to="" className={styles.navlink} >Home</NavLink>
+                            <NavLink to="hotels" className={styles.navlink} onClick={handleHotelsClick} >Hotels</NavLink>
+                            <NavLink to="favorites" className={styles.navlink}>Favorites</NavLink>
+                            <NavLink to="aboutus/aboutbooking" className={styles.navlink} >About us</NavLink>
                         </div>
                     </div>
                 </Header >
@@ -47,24 +47,24 @@ export default function MyLayout() {
                                 <div>
                                     <h3>About Us</h3>
                                     <ul>
-                                        <li><Link to="/aboutus/aboutbooking">Company</Link></li>
-                                        <li><a href="/team">Team</a></li>
-                                        <li><a href="/careers">Careers</a></li>
+                                        <li><Link to="aboutus/aboutbooking">Company</Link></li>
+                                        <li><a href="team">Team</a></li>
+                                        <li><a href="careers">Careers</a></li>
                                     </ul>
                                 </div>
                                 <div>
                                     <h3>Support</h3>
                                     <ul>
-                                        <li><a href="/help">Help Center</a></li>
-                                        <li><a href="/faq">FAQs</a></li>
-                                        <li><Link to="/aboutus/contact">Contact us</Link></li>
+                                        <li><a href="help">Help Center</a></li>
+                                        <li><a href="faq">FAQs</a></li>
+                                        <li><Link to="aboutus/contact">Contact us</Link></li>
                                     </ul>
                                 </div>
                                 <div>
                                     <h3>Legal</h3>
                                     <ul>
-                                        <li><Link to="/aboutus/terms">Terms & Conditions</Link></li>
-                                        <li><Link to="/aboutus/legal">Legal</Link></li>
+                                        <li><Link to="aboutus/terms">Terms & Conditions</Link></li>
+                                        <li><Link to="aboutus/legal">Legal</Link></li>
                                     </ul>
                                 </div>
                             </div>
