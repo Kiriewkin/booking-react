@@ -1,4 +1,4 @@
-import { store } from ".././store";
+import { store } from "../store";
 import { fetchHotels } from "../store/thunks/hotelsThunk";
 
 export const hotelsLoader = async () => {

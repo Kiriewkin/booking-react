@@ -1,12 +1,26 @@
 import { useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import { Button, Col, Row } from "antd";
+import { RootState } from "../../store";
 
 import HotelsItem from "./HotelsItem";
 
+type Hotel = {
+    id: number;
+    name: string;
+    city: string;
+    address: string;
+    state: string;
+    country_code: string;
+    hotel_rating: number;
+    phone_number: string | null;
+    website: string | null;
+    img: string;
+};
+
 export default function HotelsList() {
     const { city } = useParams();
-    const { hotels, city: cityHotels } = useSelector((state) => state.hotels);
+    const { hotels, city: cityHotels } = useSelector((state: RootState) => state.hotels);
 
     const hotelsToRender = city ? cityHotels : hotels;
 
@@ -14,10 +28,10 @@ export default function HotelsList() {
     const goBack = () => {
         navigate(-1);
     };
-    
+
     return (
         <Row gutter={[16, 32]}>
-            {hotelsToRender.map((hotel) => (
+            {hotelsToRender.filter((hotel): hotel is Hotel => 'name' in hotel).map((hotel) => (
                 <Col key={`${hotel.id}--${hotel.name}`} span={8}>
                     <HotelsItem hotel={hotel} />
                 </Col>
@@ -25,7 +39,9 @@ export default function HotelsList() {
 
             {hotelsToRender.length === 0 && (
                 <div className="no-hotels-container">
-                    <p className="no-hotels-message">{city ? `In ${city} no hotels!` : "No hotels available!"}</p>
+                    <p className="no-hotels-message">
+                        {city ? `In ${city} no hotels!` : "No hotels available!"}
+                    </p>
                     <Button onClick={goBack}>Back</Button>
                 </div>
             )}

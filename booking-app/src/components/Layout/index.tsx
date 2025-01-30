@@ -4,6 +4,7 @@ import { FacebookOutlined, TwitterOutlined, InstagramOutlined } from "@ant-desig
 import { Flex, Layout } from "antd";
 
 import { resetCity } from "../../store/slices/hotelsSlice";
+import { AppDispatch } from "../../store";
 
 import logo from '../../assets/icons/logo.svg'
 
@@ -12,7 +13,7 @@ import styles from "./index.module.scss"
 export default function MyLayout() {
     const { Header, Content, Footer } = Layout;
 
-    const dispatch = useDispatch();
+    const dispatch: AppDispatch = useDispatch();
     const handleHotelsClick = () => {
         dispatch(resetCity());
     };

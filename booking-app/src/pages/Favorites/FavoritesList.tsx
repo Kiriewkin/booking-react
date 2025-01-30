@@ -1,16 +1,29 @@
-import React, { useState, useEffect } from "react";
-import { clearLocalStorage, getLocalStorage } from "../../utils/localStorage";
-import { Row, Col, Button, Popover } from "antd";
-import HotelsItem from "../Hotels/HotelsItem";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { Row, Col, Button, Popover } from "antd";
+import { clearLocalStorage, getLocalStorage } from "../../utils/localStorage";
+import HotelsItem from "../Hotels/HotelsItem";
+
+type Hotel = {
+    id: number;
+    name: string;
+    city: string;
+    address: string;
+    state: string;
+    country_code: string;
+    hotel_rating: number;
+    phone_number: string | null;
+    website: string | null;
+    img: string;
+};
 
 export default function FavoritesList() {
-    const [favorites, setFavorites] = useState([]);
+    const [favorites, setFavorites] = useState<Hotel[]>([]);
     const [showPopover, setShowPopover] = useState(false);
     const navigate = useNavigate();
 
     useEffect(() => {
-        const storedFavorites = getLocalStorage("likes") || [];
+        const storedFavorites = getLocalStorage<Hotel[]>("likes", []);
         setFavorites(storedFavorites);
     }, []);
 
@@ -27,12 +40,10 @@ export default function FavoritesList() {
 
     return (
         <div>
-            <Popover
-                content="Favorites cleared!"
-                open={showPopover}
-                placement="bottom"
-            >
-                <Button onClick={clearFavorites} style={{marginBottom: 15}}>Clear Favorites</Button>
+            <Popover content="Favorites cleared!" open={showPopover} placement="bottom">
+                <Button onClick={clearFavorites} style={{ marginBottom: 15 }}>
+                    Clear Favorites
+                </Button>
             </Popover>
             <Row gutter={[16, 32]}>
                 {favorites.map((hotel) => (

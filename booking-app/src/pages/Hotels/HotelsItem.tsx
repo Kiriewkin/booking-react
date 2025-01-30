@@ -2,25 +2,42 @@ import React, { useState, useEffect } from "react";
 import { Card, Popover, Rate } from "antd";
 import { useNavigate } from "react-router-dom";
 import { HeartOutlined, HeartFilled } from "@ant-design/icons";
+
 import { getLocalStorage, setLocalStorage } from "../../utils/localStorage";
-import PropTypes from "prop-types";
 
 import "./index.scss";
 
-export default function HotelsItem({ hotel = { hotel_rating: 0, phone_number: null, website: null } }) {
-    const [isFavorite, setIsFavorite] = useState(false);
+type Hotel = {
+    id: number;
+    name: string;
+    city: string;
+    address: string;
+    state: string;
+    country_code: string;
+    hotel_rating: number;
+    phone_number: string | null;
+    website: string | null;
+    img: string;
+};
+
+type HotelProps = {
+    hotel: Hotel;
+};
+
+const HotelsItem: React.FC<HotelProps> = ({ hotel }) => {
+    const [isFavorite, setIsFavorite] = useState<boolean>(false);
     const navigate = useNavigate();
 
     useEffect(() => {
-        const storedFavorites = getLocalStorage("likes") || [];
+        const storedFavorites = getLocalStorage<Hotel[]>("likes", []);
         const isInFavorites = storedFavorites.some((likedHotel) => likedHotel.id === hotel.id);
         setIsFavorite(isInFavorites);
     }, [hotel.id]);
 
-    const handleLike = (e) => {
+    const handleLike = (e: React.MouseEvent<HTMLSpanElement>) => {
         e.stopPropagation();
-        const storedFavorites = getLocalStorage("likes") || [];
-        let updatedFavorites;
+        const storedFavorites = getLocalStorage<Hotel[]>("likes", []);
+        let updatedFavorites: Hotel[];
 
         if (isFavorite) {
             updatedFavorites = storedFavorites.filter((likedHotel) => likedHotel.id !== hotel.id);
@@ -78,16 +95,4 @@ export default function HotelsItem({ hotel = { hotel_rating: 0, phone_number: nu
     );
 }
 
-HotelsItem.propTypes = {
-    hotel: PropTypes.shape({
-        id: PropTypes.number.isRequired,
-        img: PropTypes.string.isRequired,
-        name: PropTypes.string.isRequired,
-        address: PropTypes.string.isRequired,
-        city: PropTypes.string.isRequired,
-        country_code: PropTypes.string.isRequired,
-        hotel_rating: PropTypes.number,
-        phone_number: PropTypes.string,
-        website: PropTypes.string,
-    }).isRequired,
-};
+export default HotelsItem

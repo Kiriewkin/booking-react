@@ -1,17 +1,19 @@
 import { Card, Rate, Spin } from "antd";
-import "./index.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
+
+import { RootState, AppDispatch } from "../../store";
 import { handleHotelSelection } from "../../store/thunks/hotelsThunk";
+
+import "./index.scss";
 
 export default function HotelsDetails() {
     const { name } = useParams();
-    const dispatch = useDispatch();
-    const hotelArray = useSelector((state) => state.hotels.selectedHotel);
-    const loading = useSelector((state) => state.hotels.loading);
-    const hotel = hotelArray?.[0];
-
+    const dispatch: AppDispatch = useDispatch();
+    const hotel = useSelector((state: RootState) => state.hotels.selectedHotel);
+    const loading = useSelector((state: RootState) => state.hotels.loading);
+    
     useEffect(() => {
         if (name) {
             dispatch(handleHotelSelection(name));

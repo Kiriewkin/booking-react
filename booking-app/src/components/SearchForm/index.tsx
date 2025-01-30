@@ -5,13 +5,14 @@ import { Formik, ErrorMessage } from "formik";
 import { Form, Select, DatePicker, InputNumber, Button, Space } from "antd";
 
 import { fetchDestination } from "../../store/thunks/destinationThunk";
+import { AppDispatch, RootState } from "../../store";
 
 import styles from "./index.module.scss"
 
 export default function SearchForm() {
     const navigate = useNavigate();
-    const { destination } = useSelector((state) => state.destination);
-    const dispatch = useDispatch();
+    const { destination } = useSelector((state: RootState) => state.destination);
+    const dispatch: AppDispatch = useDispatch();
 
     useEffect(() => {
         dispatch(fetchDestination());
@@ -20,7 +21,7 @@ export default function SearchForm() {
     const { Option } = Select;
     const { RangePicker } = DatePicker;
 
-    const initialValues = {
+    type InitialValues = {
         destination: "",
         checkIn: "",
         checkOut: "",
@@ -28,7 +29,15 @@ export default function SearchForm() {
         children: "",
     };
 
-    const handleSubmit = (values) => {
+    const initialValues: InitialValues = {
+        destination: "",
+        checkIn: "",
+        checkOut: "",
+        adults: "",
+        children: "",
+    };
+
+    const handleSubmit = (values: InitialValues) => {
         const newReq = {
             name: values.destination,
             checkIn: values.checkIn,
@@ -62,12 +71,12 @@ export default function SearchForm() {
                             <Select
                                 onChange={(value) => setFieldValue("destination", value)}
                                 placeholder="Select a destination"
-                            > 
+                            >
                                 {destination.map((city) => (
                                     <Option
                                         key={`${city.label}--${city.value}`}
                                         value={city.label}
-                                    > 
+                                    >
                                         {city.label}
                                     </Option>
                                 ))}
@@ -82,14 +91,13 @@ export default function SearchForm() {
                             <Space direction="vertical" size={12}>
                                 <RangePicker
                                     onChange={(dates) => {
-                                        setFieldValue(
-                                            "checkIn",
-                                            dates ? dates[0].format("YYYY-MM-DD") : ""
-                                        );
-                                        setFieldValue(
-                                            "checkOut",
-                                            dates ? dates[1].format("YYYY-MM-DD") : ""
-                                        );
+                                        if (dates && dates.length === 2) {
+                                            setFieldValue("checkIn", dates[0]?.format("YYYY-MM-DD"));
+                                            setFieldValue("checkOut", dates[1]?.format("YYYY-MM-DD"));
+                                        } else {
+                                            setFieldValue("checkIn", "");
+                                            setFieldValue("checkOut", "");
+                                        }
                                     }}
                                 />
                             </Space>

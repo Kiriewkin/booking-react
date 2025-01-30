@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { Spin } from "antd";
 
+import { AppDispatch,RootState } from "../../store";
 import { handleCitySelection } from "../../store/thunks/hotelsThunk";
 import { capitalizeFirstLetter } from "../../utils/helpers";
 import HotelsList from "./HotelsList";
@@ -11,8 +12,8 @@ import "./index.scss"
 
 export default function Hotels() {
     const { city } = useParams();
-    const loading = useSelector((state) => state.hotels.loading);
-    const dispatch = useDispatch();
+    const loading = useSelector((state: RootState) => state.hotels.loading);
+    const dispatch: AppDispatch = useDispatch();
 
     useEffect(() => {
         if (city) {

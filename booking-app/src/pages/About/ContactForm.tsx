@@ -1,17 +1,22 @@
-import React from 'react';
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { Formik, Form, Field, ErrorMessage, FormikHelpers } from 'formik';
 import * as Yup from "yup";
 
 import styles from "./index.module.scss"
 
 export default function ContactsForm() {
-    const initialValues = {
+    type InitialValues = {
         name: '',
         email: '',
         message: '',
     }
 
-    const handleSubmit = (values, { resetForm }) => {
+    const initialValues : InitialValues = {
+        name: '',
+        email: '',
+        message: '',
+    }
+
+    const handleSubmit = (values: InitialValues, { resetForm } : FormikHelpers<InitialValues>) => {
         console.log('Data sent', values);
         resetForm();
     };

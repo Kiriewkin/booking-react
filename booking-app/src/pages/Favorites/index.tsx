@@ -1,4 +1,3 @@
-import React from "react"
 import FavoritesList from "./FavoritesList"
 
 export default function Favorites () {

@@ -1,12 +1,12 @@
 import { useSelector } from "react-redux";
 import { Col, Carousel, Spin } from "antd";
-
+import { RootState } from "../../../store";
 import DestinationItem from "./DestinationItem";
 
 import styles from "./index.module.scss";
 
 export default function DestinationList() {
-    const { loading, destination } = useSelector((state) => state.destination);
+    const { loading, destination } = useSelector((state: RootState) => state.destination);
 
     if (loading) {
         return (

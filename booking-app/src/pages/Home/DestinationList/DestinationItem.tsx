@@ -1,9 +1,20 @@
-import PropTypes from "prop-types";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./index.module.scss";
 import "./slider.scss";
 
-export default function DestinationItem({ city }) {
+type City = {
+    id: number;
+    value: number;
+    label: string;
+    img: string;
+}
+
+type CityProps = {
+    city : City;
+}
+
+const DestinationItem : React.FC<CityProps> =({ city }) => {
     const navigate = useNavigate()
 
     const handleCardClick = () => {
@@ -17,15 +28,7 @@ export default function DestinationItem({ city }) {
                 <p className={styles.cityLabel}>{city.label}</p>
             </div>
         </div>
-
     );
 }
 
-DestinationItem.propTypes = {
-    city: PropTypes.shape({
-        label: PropTypes.string.isRequired,
-        id: PropTypes.number.isRequired,
-        img: PropTypes.string.isRequired,
-        value: PropTypes.number.isRequired,
-    }).isRequired,
-};
+export default DestinationItem

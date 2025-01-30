@@ -1,7 +1,20 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { fetchDestination } from "../thunks/destinationThunk";
 
-const initialState = {
+type Destination = {
+  id: number;
+  value: number;
+  label: string;
+  img: string;
+}
+
+type DestinationState = {
+  destination : Destination[];
+  loading: boolean;
+  error: string;
+}
+
+const initialState: DestinationState = {
   destination: [],
   loading: false,
   error: '',
@@ -22,9 +35,9 @@ const destinationSlice = createSlice({
         state.error = '';
         state.destination = action.payload;
       })
-      .addCase(fetchDestination.rejected, (state, action) => {
+      .addCase(fetchDestination.rejected, (state, action: PayloadAction<string | undefined>) => {
         state.loading = false;
-        state.error = action.payload;
+        state.error = action.payload || "Failed to fetch destination";
       })
   },
 });

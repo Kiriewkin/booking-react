@@ -4,6 +4,8 @@
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^2.5.0",
+    "@types/react": "^19.0.8",
+    "@types/react-router-dom": "^5.3.3",
     "antd": "^5.22.7",
     "axios": "^1.7.9",
     "cra-template": "1.2.0",
@@ -17,13 +19,14 @@
     "redux": "^5.0.1",
     "redux-thunk": "^3.1.0",
     "sass": "^1.83.0",
+    "typescript": "^5.7.3",
     "yup": "^1.6.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
+    "start": "react-scripts start src/index.tsx",
+    "build": "react-scripts build src/index.tsx",
+    "test": "react-scripts test src/index.tsx",
+    "eject": "react-scripts eject src/index.tsx",
     "lint": "eslint src/**/*.js",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
