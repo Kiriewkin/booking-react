@@ -1,6 +1,7 @@
+import { useState } from "react";
 import { Outlet, NavLink, Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { FacebookOutlined, TwitterOutlined, InstagramOutlined } from "@ant-design/icons";
+import { FacebookOutlined, TwitterOutlined, InstagramOutlined, MenuOutlined, CloseCircleOutlined, MailTwoTone } from "@ant-design/icons";
 import { Flex, Layout } from "antd";
 
 import { resetCity } from "../../store/slices/hotelsSlice";
@@ -10,29 +11,56 @@ import logo from '../../assets/icons/logo.svg'
 
 import styles from "./index.module.scss"
 
-export default function MyLayout() {
+const MyLayout: React.FC = () => {
     const { Header, Content, Footer } = Layout;
 
     const dispatch: AppDispatch = useDispatch();
+
     const handleHotelsClick = () => {
         dispatch(resetCity());
+        handleLinkClick()
+    };
+
+    const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+    const handleLinkClick = () => {
+        setIsMenuOpen(false);
     };
 
     return (
         <Flex gap="middle" wrap>
             <Layout>
                 <Header className={styles['header-container']}>
-                    <div className="wrapper" style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                    <div className={`wrapper ${styles['header-content']}`} style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                         <div>
                             <NavLink to="" >
                                 <img src={logo} alt="logo" className={styles['main-logo']} />
                             </NavLink>
                         </div>
-                        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 15 }}>
+                        <div className={styles['header-links']}>
                             <NavLink to="" className={styles.navlink} >Home</NavLink>
                             <NavLink to="hotels" className={styles.navlink} onClick={handleHotelsClick} >Hotels</NavLink>
                             <NavLink to="favorites" className={styles.navlink}>Favorites</NavLink>
                             <NavLink to="aboutus/aboutbooking" className={styles.navlink} >About us</NavLink>
+                            <NavLink to="register" className={styles.navlink} >Register</NavLink>
+                        </div>
+                        <div className={styles['menu-icon']}>
+                            <MenuOutlined onClick={() => setIsMenuOpen(true)} />
+                            {isMenuOpen && (
+                                <div className={styles['popup-menu-overlay']}>
+                                    <CloseCircleOutlined onClick={() => setIsMenuOpen(false)} />
+                                    <ul className={styles['popum-menu-list']}>
+                                        <li><NavLink to="" className={styles.navlink} onClick={handleLinkClick}>Home</NavLink></li>
+                                        <li><NavLink to="hotels" className={styles.navlink} onClick={handleHotelsClick}>Hotels</NavLink></li>
+                                        <li><NavLink to="favorites" className={styles.navlink} onClick={handleLinkClick}>Favorites</NavLink></li>
+                                        <li><NavLink to="aboutus/aboutbooking" className={styles.navlink} onClick={handleLinkClick}>About us</NavLink></li>
+                                        <li className={styles['contact-link']}>
+                                            <MailTwoTone className={styles['mail-icon']} />
+                                            <NavLink to="aboutus/contact" className={styles.navlink} onClick={handleLinkClick}>Contact Us</NavLink>
+                                        </li>
+                                    </ul>
+                                </div>
+                            )}
                         </div>
                     </div>
                 </Header >
@@ -93,3 +121,5 @@ export default function MyLayout() {
         </Flex>
     )
 }
+
+export default MyLayout

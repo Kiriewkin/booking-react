@@ -23,3 +23,14 @@
     color: $background-primary-color;
     margin-bottom: 25px;
 }
+
+@media (max-width: 768px) {
+    .home-title {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+    .find-destination {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+}

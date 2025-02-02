@@ -1,7 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./index.module.scss";
-import "./slider.scss";
 
 type City = {
     id: number;

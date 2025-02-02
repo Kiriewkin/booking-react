@@ -10,6 +10,7 @@ import NotFound from "./pages/NotFound";
 import About from "./pages/About";
 import { Legal, AboutBooking, Contact, Terms } from "./pages/About";
 import Favorites from "./pages/Favorites";
+import AuthPage from "./components/Auth";
 
 const router = createBrowserRouter([
   {
@@ -65,6 +66,14 @@ const router = createBrowserRouter([
       {
         path: "favorites",
         element: <Favorites />,
+      },
+      {
+        path: "register",
+        element: <AuthPage />
+      },
+      {
+        path: "login",
+        element: <AuthPage />
       },
       {
         path: "*",

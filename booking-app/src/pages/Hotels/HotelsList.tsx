@@ -32,7 +32,7 @@ export default function HotelsList() {
     return (
         <Row gutter={[16, 32]}>
             {hotelsToRender.filter((hotel): hotel is Hotel => 'name' in hotel).map((hotel) => (
-                <Col key={`${hotel.id}--${hotel.name}`} span={8}>
+                <Col key={`${hotel.id}--${hotel.name}`} xs={24} sm={12} md={8} >
                     <HotelsItem hotel={hotel} />
                 </Col>
             ))}

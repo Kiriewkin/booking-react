@@ -47,7 +47,7 @@ export default function FavoritesList() {
             </Popover>
             <Row gutter={[16, 32]}>
                 {favorites.map((hotel) => (
-                    <Col key={`${hotel.id}--${hotel.name}`} span={8}>
+                    <Col key={`${hotel.id}--${hotel.name}`} xs={24} sm={12} md={8}>
                         <HotelsItem hotel={hotel} />
                     </Col>
                 ))}
