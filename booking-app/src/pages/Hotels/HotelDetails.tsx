@@ -13,12 +13,14 @@ export default function HotelsDetails() {
     const dispatch: AppDispatch = useDispatch();
     const hotel = useSelector((state: RootState) => state.hotels.selectedHotel);
     const loading = useSelector((state: RootState) => state.hotels.loading);
+    const currentLang = useSelector((state: RootState) => state.languages.currentLang);
     
     useEffect(() => {
         if (name) {
-            dispatch(handleHotelSelection(name));
+            dispatch(handleHotelSelection({ name, lang: currentLang }));
         }
-    }, [dispatch, name]);
+    }, [dispatch, name, currentLang]);
+    
 
     if (loading) {
         return (

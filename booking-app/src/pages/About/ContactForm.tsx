@@ -1,9 +1,11 @@
 import { Formik, Form, Field, ErrorMessage, FormikHelpers } from 'formik';
 import * as Yup from "yup";
+import { useTranslation } from 'react-i18next';
 
 import styles from "./index.module.scss"
 
 export default function ContactsForm() {
+    const { t } = useTranslation()
     type InitialValues = {
         name: '',
         email: '',
@@ -36,7 +38,7 @@ export default function ContactsForm() {
     return (
         <>
 
-            <p>Leave a message using the form below:</p>
+            <p>{t("leaveMessage")}</p>
 
             <Formik
                 onSubmit={handleSubmit}
@@ -44,22 +46,22 @@ export default function ContactsForm() {
                 initialValues={initialValues}
             >
                 <Form className={styles["contact-form"]}>
-                    <Field type="text" name="name" placeholder="Your Name" />
+                    <Field type="text" name="name" placeholder={t("yourName")} />
                     <ErrorMessage name="name" component="span" className={styles["error"]} />
 
-                    <Field type="email" name="email" placeholder="Your Email" />
+                    <Field type="email" name="email" placeholder={t("yourEmail")} />
                     <ErrorMessage name="email" component="span" className={styles["error"]} />
 
                     <Field
                         as="textarea"
                         name="message"
-                        placeholder="Your Message"
+                        placeholder={t("yourMessage")}
                         rows="4"
                         cols="50"
                         style={{resize: "vertical"}}
                     />
                     <ErrorMessage name="message" component="span" className={styles["error"]} />
-                    <button type="submit">Submit</button>
+                    <button type="submit">{t("submitBtn")}</button>
 
                 </Form>
             </Formik></>

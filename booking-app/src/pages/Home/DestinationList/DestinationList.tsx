@@ -1,17 +1,21 @@
 import { useSelector } from "react-redux";
 import { Carousel, Spin } from "antd";
+import { useTranslation } from "react-i18next";
+
 import { RootState } from "../../../store";
 import DestinationItem from "./DestinationItem";
+
 import styles from "./index.module.scss";
+
 
 export default function DestinationList() {
     const { loading, destination } = useSelector((state: RootState) => state.destination);
-
+    const { t } = useTranslation()
     if (loading) {
         return (
             <div className={styles.loading}>
                 <Spin size="large" />
-                <p>Loading destinations...</p>
+                <p>{t("loading")}</p>
             </div>
         );
     }

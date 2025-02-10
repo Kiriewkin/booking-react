@@ -3,7 +3,8 @@ import { fetchHotels } from "../store/thunks/hotelsThunk";
 
 export const hotelsLoader = async () => {
     try {
-        const result = store.dispatch(fetchHotels());
+        const lang = store.getState().languages.currentLang;
+        const result = store.dispatch(fetchHotels(lang));
         return (await result).payload;
     } catch (error) {
         console.error("Failed to load hotels:", error);

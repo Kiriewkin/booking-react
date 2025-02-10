@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { Formik, ErrorMessage } from "formik";
 import { Form, Select, DatePicker, InputNumber, Button, Space } from "antd";
+import { useTranslation } from "react-i18next";
 
 import { fetchDestination } from "../../store/thunks/destinationThunk";
 import { AppDispatch, RootState } from "../../store";
@@ -12,11 +13,14 @@ import styles from "./index.module.scss"
 export default function SearchForm() {
     const navigate = useNavigate();
     const { destination } = useSelector((state: RootState) => state.destination);
-    const dispatch: AppDispatch = useDispatch();
+    const currentLang = useSelector((state: RootState) => state.languages.currentLang);
 
+    const dispatch: AppDispatch = useDispatch();
     useEffect(() => {
-        dispatch(fetchDestination());
-    }, [dispatch]);
+        dispatch(fetchDestination(currentLang));
+    }, [dispatch, currentLang]);
+
+    const { t } = useTranslation()
 
     const { Option } = Select;
     const { RangePicker } = DatePicker;
@@ -70,7 +74,7 @@ export default function SearchForm() {
                         >
                             <Select
                                 onChange={(value) => setFieldValue("destination", value)}
-                                placeholder="Select a destination"
+                                placeholder={t("selectDestination")}
                             >
                                 {destination.map((city) => (
                                     <Option
@@ -109,7 +113,7 @@ export default function SearchForm() {
                             <InputNumber
                                 min={1}
                                 max={10}
-                                placeholder="Adults"
+                                placeholder={t("adults")}
                                 onChange={(value) => setFieldValue("adults", value)}
                             />
                         </Form.Item>
@@ -119,7 +123,7 @@ export default function SearchForm() {
                             <InputNumber
                                 min={0}
                                 max={10}
-                                placeholder="Children"
+                                placeholder={t("children")}
                                 onChange={(value) => setFieldValue("children", value)}
                             />
                         </Form.Item>
@@ -127,7 +131,7 @@ export default function SearchForm() {
 
                         <Form.Item>
                             <Button type="primary" htmlType="submit">
-                                Search
+                                {t("search")}
                             </Button>
                         </Form.Item>
                     </Form>

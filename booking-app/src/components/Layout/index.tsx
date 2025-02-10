@@ -3,17 +3,21 @@ import { Outlet, NavLink, Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { FacebookOutlined, TwitterOutlined, InstagramOutlined, MenuOutlined, CloseCircleOutlined, MailTwoTone } from "@ant-design/icons";
 import { Flex, Layout } from "antd";
+import { useTranslation } from "react-i18next";
 
 import { resetCity } from "../../store/slices/hotelsSlice";
 import { AppDispatch } from "../../store";
+import { setLanguage } from "../../store/slices/languageSlice";
 
-import logo from '../../assets/icons/logo.svg'
+import logo from '../../assets/icons/logo.svg';
+import uaLang from '../../assets/icons/Ua@3x.png';
+import enLang from '../../assets/icons/Gb@3x.png';
+import worldLang from '../../assets/icons/worldLang.svg';
 
 import styles from "./index.module.scss"
 
 const MyLayout: React.FC = () => {
     const { Header, Content, Footer } = Layout;
-
     const dispatch: AppDispatch = useDispatch();
 
     const handleHotelsClick = () => {
@@ -21,12 +25,22 @@ const MyLayout: React.FC = () => {
         handleLinkClick()
     };
 
-    const [isMenuOpen, setIsMenuOpen] = useState(false)
+    const [isOpen, setIsOpen] = useState(false)
 
     const handleLinkClick = () => {
-        setIsMenuOpen(false);
+        setIsOpen(false);
     };
 
+    const { t, i18n } = useTranslation();
+    const changeLanguage = (language: "en" | "ua") => (
+        i18n.changeLanguage(language)
+    )
+
+    const handleChangeLanguage = (language: "en" | "ua") => {
+        changeLanguage(language);
+        dispatch(setLanguage(language));
+        setIsOpen(false);
+    };
     return (
         <Flex gap="middle" wrap>
             <Layout>
@@ -38,33 +52,63 @@ const MyLayout: React.FC = () => {
                             </NavLink>
                         </div>
                         <div className={styles['header-links']}>
-                            <NavLink to="" className={styles.navlink} >Home</NavLink>
-                            <NavLink to="hotels" className={styles.navlink} onClick={handleHotelsClick} >Hotels</NavLink>
-                            <NavLink to="favorites" className={styles.navlink}>Favorites</NavLink>
-                            <NavLink to="aboutus/aboutbooking" className={styles.navlink} >About us</NavLink>
-                            <NavLink to="register" className={styles.navlink} >Register</NavLink>
+                            <NavLink to="" className={styles.navlink} >{t("home")}</NavLink>
+                            <NavLink to="hotels" className={styles.navlink} onClick={handleHotelsClick} >{t("hotels")}</NavLink>
+                            <NavLink to="favorites" className={styles.navlink}>{t("favorites")}</NavLink>
+                            <NavLink to="aboutus/aboutbooking" className={styles.navlink} >{t("aboutUs")}</NavLink>
+                            <NavLink to="register" className={styles.navlink} >{t("register")}</NavLink>
+                            <div className={styles['language-wrapper']}
+                                onMouseEnter={() => setIsOpen(true)}
+                                onMouseLeave={() => setIsOpen(false)}
+                            >
+                                <button className={styles['world-button']}>
+                                    <img src={worldLang} alt="world Language" />
+                                </button>
+
+                                {isOpen && (
+                                    <div className={styles['language-menu-container']}>
+                                        <div className={styles['language-menu']}>
+                                            <button onClick={() => handleChangeLanguage("ua")} className={styles.navlink}>
+                                                <img src={uaLang} alt="Українська" /> Українська
+                                            </button>
+                                            <button onClick={() => handleChangeLanguage("en")} className={styles.navlink}>
+                                                <img src={enLang} alt="English" /> English
+                                            </button>
+                                        </div>
+                                    </div>
+                                )}
+                            </div>
                         </div>
                         <div className={styles['menu-icon']}>
-                            <MenuOutlined onClick={() => setIsMenuOpen(true)} />
-                            {isMenuOpen && (
+                            <MenuOutlined onClick={() => setIsOpen(true)} />
+                            {isOpen && (
                                 <div className={styles['popup-menu-overlay']}>
-                                    <CloseCircleOutlined onClick={() => setIsMenuOpen(false)} />
+                                    <CloseCircleOutlined onClick={() => setIsOpen(false)} />
                                     <ul className={styles['popum-menu-list']}>
-                                        <li><NavLink to="" className={styles.navlink} onClick={handleLinkClick}>Home</NavLink></li>
-                                        <li><NavLink to="hotels" className={styles.navlink} onClick={handleHotelsClick}>Hotels</NavLink></li>
-                                        <li><NavLink to="favorites" className={styles.navlink} onClick={handleLinkClick}>Favorites</NavLink></li>
-                                        <li><NavLink to="aboutus/aboutbooking" className={styles.navlink} onClick={handleLinkClick}>About us</NavLink></li>
+                                        <NavLink to="" className={styles.navlink} >{t("home")}</NavLink>
+                                        <NavLink to="hotels" className={styles.navlink} onClick={handleHotelsClick} >{t("hotels")}</NavLink>
+                                        <NavLink to="favorites" className={styles.navlink}>{t("favorites")}</NavLink>
+                                        <NavLink to="aboutus/aboutbooking" className={styles.navlink} >{t("aboutUs")}</NavLink>
+                                        <NavLink to="register" className={styles.navlink} >{t("register")}</NavLink>
                                         <li className={styles['contact-link']}>
                                             <MailTwoTone className={styles['mail-icon']} />
-                                            <NavLink to="aboutus/contact" className={styles.navlink} onClick={handleLinkClick}>Contact Us</NavLink>
+                                            <NavLink to="aboutus/contact" className={styles.navlink} onClick={handleLinkClick}>{t("contactUs")}</NavLink>
                                         </li>
                                     </ul>
+                                    <div className={styles['language-menu']}>
+                                        <button onClick={() => handleChangeLanguage("ua")} className={styles.navlink}>
+                                            <img src={uaLang} alt="Українська" /> Українська
+                                        </button>
+                                        <button onClick={() => handleChangeLanguage("en")} className={styles.navlink}>
+                                            <img src={enLang} alt="English" /> English
+                                        </button>
+                                    </div>
                                 </div>
                             )}
                         </div>
                     </div>
                 </Header >
-                <Content style={{ minHeight: "100vh" }}>
+                <Content style={{ minHeight: "100vh", background: "#f0f2f5" }}>
                     <div className="wrapper">
                         <Outlet />
                     </div>
@@ -74,31 +118,31 @@ const MyLayout: React.FC = () => {
                         <div style={{ display: "flex", justifyContent: "space-between" }}>
                             <div className={styles['footer-links']}>
                                 <div>
-                                    <h3>About Us</h3>
+                                    <h3>{t("aboutUs")}</h3>
                                     <ul>
-                                        <li><Link to="aboutus/aboutbooking">Company</Link></li>
-                                        <li><a href="team">Team</a></li>
-                                        <li><a href="careers">Careers</a></li>
+                                        <li><Link to="aboutus/aboutbooking">{t("company")}</Link></li>
+                                        <li><a href="team">{t("team")}</a></li>
+                                        <li><a href="careers">{t("careers")}</a></li>
                                     </ul>
                                 </div>
                                 <div>
-                                    <h3>Support</h3>
+                                    <h3>{t("support")}</h3>
                                     <ul>
-                                        <li><a href="help">Help Center</a></li>
-                                        <li><a href="faq">FAQs</a></li>
-                                        <li><Link to="aboutus/contact">Contact us</Link></li>
+                                        <li><a href="help">{t("helpCenter")}</a></li>
+                                        <li><a href="faq">{t("faq")}</a></li>
+                                        <li><Link to="aboutus/contact">{t("contactUs")}</Link></li>
                                     </ul>
                                 </div>
                                 <div>
-                                    <h3>Legal</h3>
+                                    <h3>{t("legal")}</h3>
                                     <ul>
-                                        <li><Link to="aboutus/terms">Terms & Conditions</Link></li>
-                                        <li><Link to="aboutus/legal">Legal</Link></li>
+                                        <li><Link to="aboutus/terms">{t("terms")}</Link></li>
+                                        <li><Link to="aboutus/legal">{t("legal")}</Link></li>
                                     </ul>
                                 </div>
                             </div>
                             <div className={styles['footer-socials']}>
-                                <h3>Follow Us</h3>
+                                <h3>{t("followUs")}</h3>
                                 <div className={styles['social-icons']}>
                                     <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
                                         <FacebookOutlined />
@@ -113,7 +157,7 @@ const MyLayout: React.FC = () => {
                             </div>
                         </div>
                         <div className={styles['footer-bottom']}>
-                            <p>© 2024 Booking. All rights reserved.</p>
+                            <p>{t("allRightsReserved")}</p>
                         </div>
                     </div>
                 </Footer>

@@ -10,14 +10,19 @@ type Destination = {
     img: string;
   }
 
-export const fetchDestination = createAsyncThunk<Destination[],void, { rejectValue: string } >(
-    'destination/fetchDestination',
-    async (_, { rejectWithValue }) => {
-    try {
-        const response = await axios.get(destinationUrl);
-        return response.data;
-    } catch (e) {
-        const errorMessage = e instanceof Error ? e.message : 'An unknown error occurred';
-        return rejectWithValue(errorMessage);
+export const fetchDestination = createAsyncThunk<
+    Destination[],
+    string,
+    { rejectValue: string }
+>(
+    "destination/fetchDestination",
+    async (lang = "en", { rejectWithValue }) => {
+        try {
+            const response = await axios.get(`${destinationUrl}?lang=${lang}`);
+            return response.data;
+        } catch (e) {
+            const errorMessage = e instanceof Error ? e.message : "An unknown error occurred";
+            return rejectWithValue(errorMessage);
+        }
     }
-});
+);
