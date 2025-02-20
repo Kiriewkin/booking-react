@@ -159,6 +159,41 @@ app.post('/update-profile', upload.single('avatar'), async (req, res) => {
     }
 });
 
+app.post('/delete-avatar', async (req, res) => {
+    const token = req.headers.authorization?.split(' ')[1];
+
+    if (!token) return res.status(401).json({ message: 'Unauthorized' });
+
+    try {
+        const decoded = jwt.verify(token, SECRET_KEY);
+        const users = loadUsers();
+
+        const userIndex = users.findIndex((user) => user.id === decoded.id);
+        if (userIndex === -1) return res.status(404).json({ message: 'User not found' });
+
+        const user = users[userIndex];
+
+        if (user.img) {
+            const avatarPath = path.join(__dirname, user.img);
+            fs.unlink(avatarPath, (err) => {
+                if (err) {
+                    console.error(`Error deleting avatar: ${err}`);
+                }
+            });
+
+            user.img = "";
+            saveUsers(users);
+
+            return res.json({ message: 'Avatar deleted successfully' });
+        } else {
+            return res.status(400).json({ message: 'No avatar to delete' });
+        }
+    } catch (error) {
+        res.status(400).json({ message: 'Error deleting avatar', error });
+    }
+});
+
+
 app.post('/add-hotel', async (req, res) => {
     const token = req.headers.authorization?.split(' ')[1];
     if (!token) {
