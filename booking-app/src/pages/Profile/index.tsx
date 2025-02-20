@@ -1,12 +1,15 @@
 import { useEffect, useState, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
-import { Avatar, Button } from 'antd';
+import { Avatar, Button, Modal, message } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
 
 import { RootState } from "../../store";
 import ProfileForm from "./UploadDateUser";
 import ReservedList from "./ReservedList";
+
+import styles from "./index.module.scss"
+import axios from "axios";
 
 interface User {
     name: string;
@@ -27,29 +30,86 @@ export default function Profile() {
     const user = useSelector((state: RootState) => state.auth.user) as User | null;
     const [userInfo, setUserInfo] = useState<UserInfo | null>(null);
     const [visible, setVisible] = useState(false);
+    const [open, setOpen] = useState(false);
+    const [confirmLoading, setConfirmLoading] = useState(false);
+    const [modalText, setModalText] = useState('Delete your avatar?');
 
     const getAvatarUrl = useCallback((user: User) => {
-        // Если изображение начинается с "https://", значит, это полный URL, и добавлять API_BASE_URL не нужно
-        return user.img && user.img.startsWith("http") ? user.img : `${API_BASE_URL}/${user.img?.replace(/\\/g, '/')}`;
+        if (user.img) {
+            if (user.img.startsWith("http")) {
+                return user.img;
+            }
+            return `${API_BASE_URL}/${user.img.replace(/\\/g, "/")}`;
+        }
+        return "";
     }, [API_BASE_URL]);
-
+    
     useEffect(() => {
-        const storedUserInfo = localStorage.getItem('userInfo');
-        if (storedUserInfo) {
-            setUserInfo(JSON.parse(storedUserInfo));
-        } else if (user) {
+        const storedUserInfo = localStorage.getItem("user");
+
+        if (user) {
             setUserInfo({
                 name: user.name,
                 email: user.email,
                 picture: getAvatarUrl(user),
             });
+        } else if (storedUserInfo) {
+            setUserInfo(JSON.parse(storedUserInfo));
         }
     }, [user, getAvatarUrl]);
-
-
+    
+    console.log("user Info", userInfo)
+    console.log("state user", user)
 
     const handleToggleForm = () => {
         setVisible((prevVisible) => !prevVisible);
+    };
+
+    const showModal = () => {
+        setModalText('Delete your avatar?')
+        setOpen(true);
+    };
+
+    const handleOk = async () => {
+        setModalText('Deleting avatar...');
+        setConfirmLoading(true);
+    
+        try {
+            const token = localStorage.getItem('token');
+            const response = await axios.post(
+                `${API_BASE_URL}/delete-avatar`,
+                {},
+                {
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                    },
+                }
+            );
+    
+            if (response.status === 200) {
+                message.success('Avatar deleted successfully');
+                setUserInfo((prevUserInfo) => {
+                    if (!prevUserInfo) return prevUserInfo;
+                    return {
+                        ...prevUserInfo,
+                        picture: "",
+                    };
+                });
+            }
+        } catch (error) {
+            if (axios.isAxiosError(error)) {
+                message.error(error.response?.data?.message || 'Error deleting avatar');
+            } else {
+                message.error('An unknown error occurred');
+            }
+        } finally {
+            setConfirmLoading(false);
+            setOpen(false);
+        }
+    };
+    
+    const handleCancel = () => {
+        setOpen(false);
     };
 
     return (
@@ -62,8 +122,17 @@ export default function Profile() {
                         size={64}
                         src={userInfo.picture}
                         icon={!userInfo.picture && <UserOutlined />}
-                        style={{ marginBottom: '20px' }}
+                        className={styles['avatar-hover']}
+                        onClick={showModal}
                     />
+                    <Modal
+                        title={modalText}
+                        open={open}
+                        onOk={handleOk}
+                        confirmLoading={confirmLoading}
+                        onCancel={handleCancel}
+                    >
+                    </Modal>
                     <div>
                         <Button onClick={handleToggleForm}>
                             {visible ? t("cancel") : t("changeData")}
