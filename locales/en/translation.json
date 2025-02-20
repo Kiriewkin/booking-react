@@ -57,5 +57,14 @@
     "or": "чи",
     "loading": "Loading...",
     "allHotels": "All hotels",
-    "hotelsIn": "Hotels in"
+    "hotelsIn": "Hotels in",
+    "logout": "Logout",
+    "profile": "Profile",
+    "newName": "New Name",
+    "newEmail": "New Email",
+    "oldPassword": "Old password",
+    "newPassword": "New Password",
+    "uploadAvatar": "Upload Avatar",
+    "changeData": "Change data",
+    "cancel": "Cancel"
 }
