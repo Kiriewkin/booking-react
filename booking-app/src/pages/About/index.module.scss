@@ -100,3 +100,10 @@
     font-size: 12px;
     margin-top: 5px;
 }
+
+@media(max-width: 768px) {
+    .about-menu ul li {
+        font-size: 12px;
+        padding: 10px 2px;
+    }
+}

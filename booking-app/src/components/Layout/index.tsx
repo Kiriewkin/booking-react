@@ -1,13 +1,14 @@
 import { useState } from "react";
 import { Outlet, NavLink, Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { FacebookOutlined, TwitterOutlined, InstagramOutlined, MenuOutlined, CloseCircleOutlined, MailTwoTone } from "@ant-design/icons";
 import { Flex, Layout } from "antd";
 import { useTranslation } from "react-i18next";
 
 import { resetCity } from "../../store/slices/hotelsSlice";
-import { AppDispatch } from "../../store";
+import { AppDispatch, RootState } from "../../store";
 import { setLanguage } from "../../store/slices/languageSlice";
+import { logout } from "../../store/slices/authSlice";
 
 import logo from '../../assets/icons/logo.svg';
 import uaLang from '../../assets/icons/Ua@3x.png';
@@ -18,6 +19,7 @@ import styles from "./index.module.scss"
 
 const MyLayout: React.FC = () => {
     const { Header, Content, Footer } = Layout;
+    const { token } = useSelector((state: RootState) => state.auth);
     const dispatch: AppDispatch = useDispatch();
 
     const handleHotelsClick = () => {
@@ -41,6 +43,10 @@ const MyLayout: React.FC = () => {
         dispatch(setLanguage(language));
         setIsOpen(false);
     };
+
+    const handleLogout = () => {
+        dispatch(logout())
+    }
     return (
         <Flex gap="middle" wrap>
             <Layout>
@@ -56,7 +62,23 @@ const MyLayout: React.FC = () => {
                             <NavLink to="hotels" className={styles.navlink} onClick={handleHotelsClick} >{t("hotels")}</NavLink>
                             <NavLink to="favorites" className={styles.navlink}>{t("favorites")}</NavLink>
                             <NavLink to="aboutus/aboutbooking" className={styles.navlink} >{t("aboutUs")}</NavLink>
-                            <NavLink to="register" className={styles.navlink} >{t("register")}</NavLink>
+                            {token ? (
+                                <NavLink to="profile" className={styles.navlink}>
+                                    {t("profile")}
+                                </NavLink>
+                            ) : (
+                                null
+                            )
+                            }
+                            {token ? (
+                                <NavLink to="" onClick={handleLogout} className={styles.navlink}>
+                                    {t("logout")}
+                                </NavLink>
+                            ) : (
+                                <NavLink to="register" className={styles.navlink}>
+                                    {t("register")}
+                                </NavLink>
+                            )}
                             <div className={styles['language-wrapper']}
                                 onMouseEnter={() => setIsOpen(true)}
                                 onMouseLeave={() => setIsOpen(false)}
@@ -83,23 +105,43 @@ const MyLayout: React.FC = () => {
                             <MenuOutlined onClick={() => setIsOpen(true)} />
                             {isOpen && (
                                 <div className={styles['popup-menu-overlay']}>
-                                    <CloseCircleOutlined onClick={() => setIsOpen(false)} />
+                                    <div style={{ display: "flex", justifyContent: "flex-end", width: "100%", fontSize: 24 }}>
+                                        <CloseCircleOutlined onClick={() => setIsOpen(false)} />
+                                    </div>
                                     <ul className={styles['popum-menu-list']}>
-                                        <NavLink to="" className={styles.navlink} >{t("home")}</NavLink>
+                                        <NavLink to="" className={styles.navlink} onClick={handleLinkClick}>{t("home")}</NavLink>
                                         <NavLink to="hotels" className={styles.navlink} onClick={handleHotelsClick} >{t("hotels")}</NavLink>
-                                        <NavLink to="favorites" className={styles.navlink}>{t("favorites")}</NavLink>
-                                        <NavLink to="aboutus/aboutbooking" className={styles.navlink} >{t("aboutUs")}</NavLink>
-                                        <NavLink to="register" className={styles.navlink} >{t("register")}</NavLink>
+                                        <NavLink to="favorites" className={styles.navlink} onClick={handleLinkClick}>{t("favorites")}</NavLink>
+                                        <NavLink to="aboutus/aboutbooking" className={styles.navlink} onClick={handleLinkClick} >{t("aboutUs")}</NavLink>
+                                        {token ? (
+                                            <NavLink to="profile" className={styles.navlink} onClick={handleLinkClick}>
+                                                {t("profile")}
+                                            </NavLink>
+                                        ) : (
+                                            null
+                                        )
+                                        }
+                                        {token ? (
+                                            <NavLink to="" onClick={() => { handleLogout(); handleLinkClick(); }} className={styles.navlink}>
+                                                {t("logout")}
+                                            </NavLink>
+                                        ) : (
+                                            <NavLink to="register" className={styles.navlink} onClick={handleLinkClick}>
+                                                {t("register")}
+                                            </NavLink>
+                                        )}
                                         <li className={styles['contact-link']}>
-                                            <MailTwoTone className={styles['mail-icon']} />
-                                            <NavLink to="aboutus/contact" className={styles.navlink} onClick={handleLinkClick}>{t("contactUs")}</NavLink>
+                                            <NavLink to="aboutus/contact" className={styles.navlink} onClick={handleLinkClick}>
+                                                <MailTwoTone className={styles['mail-icon']} />
+                                                {t("contactUs")}
+                                            </NavLink>
                                         </li>
                                     </ul>
                                     <div className={styles['language-menu']}>
-                                        <button onClick={() => handleChangeLanguage("ua")} className={styles.navlink}>
+                                        <button onClick={() => { handleChangeLanguage("ua"); handleLinkClick(); }} className={styles.navlink}>
                                             <img src={uaLang} alt="Українська" /> Українська
                                         </button>
-                                        <button onClick={() => handleChangeLanguage("en")} className={styles.navlink}>
+                                        <button onClick={() => { handleChangeLanguage("en"); handleLinkClick(); }} className={styles.navlink}>
                                             <img src={enLang} alt="English" /> English
                                         </button>
                                     </div>

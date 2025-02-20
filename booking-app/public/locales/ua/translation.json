@@ -57,5 +57,14 @@
     "or": "чи",
     "loading": "Завантаження...",
     "allHotels": "Усі готелі",
-    "hotelsIn": "Готелі в"
+    "hotelsIn": "Готелі в",
+    "logout": "Вийти",
+    "profile": "Профіль",
+    "newName": "Нове Ім'я",
+    "newEmail": "Нова електронна пошта",
+    "oldPassword": "Старий пароль",
+    "newPassword": "Новий пароль",
+    "uploadAvatar": "Завантажити аватар",
+    "changeData": "Змінити дані",
+    "cancel": "Скасувати"
 }

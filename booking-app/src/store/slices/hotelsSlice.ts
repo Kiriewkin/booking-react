@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { fetchHotels, handleCitySelection, handleHotelSelection } from "../thunks/hotelsThunk";
+import { fetchHotels, handleCitySelection, handleHotelSelection, fetchReservedHotel, fetchHotelById } from "../thunks/hotelsThunk";
 
 type Hotel = {
   id: number;
@@ -24,6 +24,10 @@ type City = {
 type HotelsState = {
   hotels: Hotel[];
   city: City[];
+  reservedHotels: {
+    favoriteHotels: Hotel[];
+  };
+  hotelDetails: Hotel | null;
   selectedHotel: Hotel | null;
   loading: boolean;
   error: string;
@@ -32,6 +36,10 @@ type HotelsState = {
 const initialState: HotelsState = {
   hotels: [],
   city: [],
+  reservedHotels: {
+    favoriteHotels: [],
+  },
+  hotelDetails: null,
   selectedHotel: null,
   loading: false,
   error: '',
@@ -85,6 +93,30 @@ const hotelsSlice = createSlice({
       .addCase(handleHotelSelection.rejected, (state, action: PayloadAction<string | undefined>) => {
         state.loading = false;
         state.error = action.payload || "Failed to fetch hotel";
+      })
+      .addCase(fetchReservedHotel.pending, (state) => {
+        state.loading = true;
+        state.error = '';
+      })
+      .addCase(fetchReservedHotel.fulfilled, (state, action) => {
+        state.loading = false;
+        state.reservedHotels = action.payload;
+      })
+      .addCase(fetchReservedHotel.rejected, (state, action: PayloadAction<any>) => {
+        state.loading = false;
+        state.error = action.payload || "Failed to fetch reserved hotels";
+      })
+      .addCase(fetchHotelById.pending, (state) => {
+        state.loading = true;
+        state.error = '';
+      })
+      .addCase(fetchHotelById.fulfilled, (state, action) => {
+        state.loading = false;
+        state.hotelDetails = action.payload;
+      })
+      .addCase(fetchHotelById.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload || 'Failed to fetch hotel details';
       });
   },
 });

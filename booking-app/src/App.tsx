@@ -11,6 +11,8 @@ import About from "./pages/About";
 import { Legal, AboutBooking, Contact, Terms } from "./pages/About";
 import Favorites from "./pages/Favorites";
 import AuthPage from "./components/Auth";
+import Profile from "./pages/Profile";
+import ProtectedRouter from "./utils/ProtectedRoutes";
 
 const router = createBrowserRouter([
   {
@@ -78,6 +80,15 @@ const router = createBrowserRouter([
       {
         path: "*",
         element: <NotFound />,
+      },
+      {
+        element: <ProtectedRouter />,
+        children: [
+          {
+            path: "profile",
+            element: <Profile />
+          }
+        ]
       },
     ],
   },
