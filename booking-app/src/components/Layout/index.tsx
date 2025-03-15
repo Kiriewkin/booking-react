@@ -49,7 +49,7 @@ const MyLayout: React.FC = () => {
     }
     return (
         <Flex gap="middle" wrap>
-            <Layout>
+            <Layout style={{minHeight: "100vh"}}>
                 <Header className={styles['header-container']}>
                     <div className={`wrapper ${styles['header-content']}`} style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                         <div>
@@ -150,7 +150,7 @@ const MyLayout: React.FC = () => {
                         </div>
                     </div>
                 </Header >
-                <Content style={{ minHeight: "100vh", background: "#f0f2f5" }}>
+                <Content style={{ background: "#f0f2f5", paddingTop: 20, paddingBottom: 100 }}>
                     <div className="wrapper">
                         <Outlet />
                     </div>

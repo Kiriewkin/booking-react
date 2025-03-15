@@ -13,6 +13,7 @@ import Favorites from "./pages/Favorites";
 import AuthPage from "./components/Auth";
 import Profile from "./pages/Profile";
 import ProtectedRouter from "./utils/ProtectedRoutes";
+import PurchaseForm from "./components/PurchaseForm";
 
 const router = createBrowserRouter([
   {
@@ -89,6 +90,10 @@ const router = createBrowserRouter([
             element: <Profile />
           }
         ]
+      },
+      {
+        path: "purchase/:name",
+        element: <PurchaseForm/>,
       },
     ],
   },

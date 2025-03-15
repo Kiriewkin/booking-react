@@ -5,7 +5,7 @@ type LanguageState = {
 };
 
 const initialState: LanguageState = {
-    currentLang: "en",
+    currentLang: localStorage.getItem("currentLang") as "en" | "ua" || "en",
 };
 
 const languageSlice = createSlice({
@@ -14,6 +14,7 @@ const languageSlice = createSlice({
     reducers: {
         setLanguage: (state, action: PayloadAction<LanguageState["currentLang"]>) => {
             state.currentLang = action.payload;
+            localStorage.setItem("currentLang", action.payload);
         }
     }
 });

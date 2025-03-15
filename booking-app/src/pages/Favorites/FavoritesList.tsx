@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Row, Col, Button, Popover } from "antd";
+import { useTranslation } from "react-i18next";
 import { clearLocalStorage, getLocalStorage } from "../../utils/localStorage";
 import HotelsItem from "../Hotels/HotelsItem";
 
@@ -15,12 +16,14 @@ type Hotel = {
     phone_number: string | null;
     website: string | null;
     img: string;
+    price: number
 };
 
 export default function FavoritesList() {
     const [favorites, setFavorites] = useState<Hotel[]>([]);
     const [showPopover, setShowPopover] = useState(false);
     const navigate = useNavigate();
+    const { t } = useTranslation()
 
     useEffect(() => {
         const storedFavorites = getLocalStorage<Hotel[]>("likes", []);
@@ -42,7 +45,7 @@ export default function FavoritesList() {
         <div>
             <Popover content="Favorites cleared!" open={showPopover} placement="bottom">
                 <Button onClick={clearFavorites} style={{ marginBottom: 15 }}>
-                    Clear Favorites
+                    {t("clearfavorites")}
                 </Button>
             </Popover>
             <Row gutter={[16, 32]}>

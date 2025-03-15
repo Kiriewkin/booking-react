@@ -17,6 +17,7 @@ type Hotel = {
     phone_number: string | null
     website: string | null;
     img: string;
+    price: number;
 };
 
 type City = {
@@ -27,31 +28,33 @@ type City = {
 }
 
 export const fetchHotels = createAsyncThunk<
-    Hotel[],
-    string,
+    { hotels: Hotel[]; total: number },
+    { lang: string; sortOrder: string; page: number },
     { rejectValue: string }
 >(
-    'hotels/fetchHotels',
-    async (lang = "en", { rejectWithValue }) => {
+    "hotels/fetchHotels",
+    async ({ lang = "en", sortOrder, page}, { rejectWithValue }) => {
         try {
-            const response = await axios.get(`${hotelsUrl}?lang=${lang}`);
+            const response = await axios.get(
+                `${hotelsUrl}?lang=${lang}&sort=${sortOrder}&page=${page}`
+            );
             return response.data;
         } catch (e) {
-            const errorMessage = e instanceof Error ? e.message : 'An unknown error occurred';
+            const errorMessage = e instanceof Error ? e.message : "An unknown error occurred";
             return rejectWithValue(errorMessage);
         }
     }
-)
+);
 
 export const handleCitySelection = createAsyncThunk<
-    City[],
-    { city: string; lang: string },
+    { hotels: City[]; total: number },
+    { city: string; lang: string; sortOrder: string; page: number },
     { rejectValue: string }
 >(
     'hotels/handleCitySelection',
-    async ({ city, lang }, { rejectWithValue }) => {
+    async ({ city, lang, sortOrder, page }, { rejectWithValue }) => {
         try {
-            const response = await axios.get(`${hotelsUrl}/city/${city}?lang=${lang}`);
+            const response = await axios.get(`${hotelsUrl}/city/${city}?lang=${lang}&sort=${sortOrder}&page=${page}`);
             return response.data;
         } catch (e) {
             const errorMessage = e instanceof Error ? e.message : 'An unknown error occurred';
@@ -59,6 +62,7 @@ export const handleCitySelection = createAsyncThunk<
         }
     }
 );
+
 
 export const handleHotelSelection = createAsyncThunk<
     Hotel[],

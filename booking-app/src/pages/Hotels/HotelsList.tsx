@@ -16,6 +16,7 @@ type Hotel = {
     phone_number: string | null;
     website: string | null;
     img: string;
+    price: number;
 };
 
 export default function HotelsList() {
@@ -23,7 +24,7 @@ export default function HotelsList() {
     const { hotels, city: cityHotels } = useSelector((state: RootState) => state.hotels);
 
     const hotelsToRender = city ? cityHotels : hotels;
-
+    
     const navigate = useNavigate();
     const goBack = () => {
         navigate(-1);
@@ -31,11 +32,13 @@ export default function HotelsList() {
 
     return (
         <Row gutter={[16, 32]}>
-            {hotelsToRender.filter((hotel): hotel is Hotel => 'name' in hotel).map((hotel) => (
-                <Col key={`${hotel.id}--${hotel.name}`} xs={24} sm={12} md={8} >
-                    <HotelsItem hotel={hotel} />
-                </Col>
-            ))}
+            {hotelsToRender
+                .filter((hotel): hotel is Hotel => "name" in hotel)
+                .map((hotel) => (
+                    <Col key={`${hotel.id}--${hotel.name}`} xs={24} sm={12} md={8}>
+                        <HotelsItem hotel={hotel} />
+                    </Col>
+                ))}
 
             {hotelsToRender.length === 0 && (
                 <div className="no-hotels-container">

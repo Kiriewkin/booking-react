@@ -132,7 +132,8 @@
             "hotel_rating": 4,
             "phone_number": "+1 800-574-0835",
             "website": null,
-            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/281054717.jpg?k=d774b83ea80bbf1b6de690dd5e9f12ac859630063554485891b2564e06c3013a&o=&hp=1"
+            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/281054717.jpg?k=d774b83ea80bbf1b6de690dd5e9f12ac859630063554485891b2564e06c3013a&o=&hp=1",
+            "price": 85
         },
         {
             "id": 11003176,
@@ -141,10 +142,11 @@
             "city": "Нью-Йорк",
             "state": null,
             "country_code": "BR",
-            "hotel_rating": 0,
+            "hotel_rating": 1.5,
             "phone_number": null,
             "website": null,
-            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/81472119.jpg?k=fe3a359684af627f508e348ceaae6d43c9f13601f18aa269d125e2d423965bea&o=&hp=1"
+            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/81472119.jpg?k=fe3a359684af627f508e348ceaae6d43c9f13601f18aa269d125e2d423965bea&o=&hp=1",
+            "price": 65
         },
         {
             "id": 747134,
@@ -156,7 +158,8 @@
             "hotel_rating": 5,
             "phone_number": "+1 212-260-414",
             "website": null,
-            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/492292176.jpg?k=d2de6369e3e37aca3a3a3a953d1ca5d7e687ffeace3c7297337d85a0d5760827&o=&hp=1"
+            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/492292176.jpg?k=d2de6369e3e37aca3a3a3a953d1ca5d7e687ffeace3c7297337d85a0d5760827&o=&hp=1",
+            "price": 105
         },
         {
             "id": 720550,
@@ -168,7 +171,8 @@
             "hotel_rating": 5,
             "phone_number": "+1 212-2191-018",
             "website": null,
-            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/332322723.jpg?k=84aa37acd1421b6fdce528b1ed5deab3fafd8b933e90fe8e5df7d9fb11334827&o=&hp=1"
+            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/332322723.jpg?k=84aa37acd1421b6fdce528b1ed5deab3fafd8b933e90fe8e5df7d9fb11334827&o=&hp=1",
+            "price": 110
         },
         {
             "id": 797074,
@@ -180,7 +184,8 @@
             "hotel_rating": 4,
             "phone_number": null,
             "website": null,
-            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/492554704.jpg?k=a7fa5ecc4bebb992e041a250d122a240b7a28974a4de2cf5b8ac2de47dd00dca&o=&hp=1"
+            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/492554704.jpg?k=a7fa5ecc4bebb992e041a250d122a240b7a28974a4de2cf5b8ac2de47dd00dca&o=&hp=1",
+            "price": 90
           },
           {
             "id": 742987,
@@ -192,7 +197,8 @@
             "hotel_rating": 4,
             "phone_number": null,
             "website": null,
-            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/341425449.jpg?k=ae5efad48fdc684d6e726b1a8e92685489051e269c2af40097875116a766c657&o=&hp=1"
+            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/341425449.jpg?k=ae5efad48fdc684d6e726b1a8e92685489051e269c2af40097875116a766c657&o=&hp=1",
+            "price": 90
           },
           {
             "id": 743452,
@@ -204,7 +210,8 @@
             "hotel_rating": 3.5,
             "phone_number": "1-212-398-2700",
             "website": null,
-            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/453237080.jpg?k=02498fa05cf7cdb1d93da45ae53e29c92f6b0e85d676dd13827dfacc8b37969a&o=&hp=1"
+            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/453237080.jpg?k=02498fa05cf7cdb1d93da45ae53e29c92f6b0e85d676dd13827dfacc8b37969a&o=&hp=1",
+            "price": 85
           },
           {
             "id": 260469,
@@ -216,7 +223,8 @@
             "hotel_rating": 4.5,
             "phone_number": "1 212 777-0012",
             "website": null,
-            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/453237236.jpg?k=3f07139d1651d3a9331571b72e1b4deb86eeb892bbfeaa74ca57028c787ee641&o=&hp=1"
+            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/453237236.jpg?k=3f07139d1651d3a9331571b72e1b4deb86eeb892bbfeaa74ca57028c787ee641&o=&hp=1",
+            "price": 100
           },
           {
             "id": 740399,
@@ -228,7 +236,8 @@
             "hotel_rating": 5,
             "phone_number": null,
             "website": null,
-            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/589423531.jpg?k=7cb9517e287f86d38ab5ae633edf9bfd9322a2f5fd5bec1e251156ea690c9f13&o=&hp=1"
+            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/589423531.jpg?k=7cb9517e287f86d38ab5ae633edf9bfd9322a2f5fd5bec1e251156ea690c9f13&o=&hp=1",
+            "price": 110
           },
           {
             "id": 5018104,
@@ -240,7 +249,8 @@
             "hotel_rating": 4,
             "phone_number": "XX",
             "website": null,
-            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/617032336.jpg?k=7172f5b4511405e15423f28845a74f409ebe254013d684b700b1726e63d8b194&o=&hp=1"
+            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/617032336.jpg?k=7172f5b4511405e15423f28845a74f409ebe254013d684b700b1726e63d8b194&o=&hp=1",
+            "price": 95
           },
           {
             "id": 792811,
@@ -252,7 +262,8 @@
             "hotel_rating": 4.5,
             "phone_number": null,
             "website": null,
-            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/465438539.jpg?k=771a96224193714161b03ba1c260ca807dfaace365a2f7cdcc3c13628b8f24b1&o=&hp=1"
+            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/465438539.jpg?k=771a96224193714161b03ba1c260ca807dfaace365a2f7cdcc3c13628b8f24b1&o=&hp=1",
+            "price": 105
           },
           {
             "id": 804220,
@@ -264,7 +275,8 @@
             "hotel_rating": 4,
             "phone_number": null,
             "website": null,
-            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/627345191.jpg?k=4b1d9062752f5403fa0f362479d24e3741417ac28ea9568540fe9936c04e7696&o=&hp=1"
+            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/627345191.jpg?k=4b1d9062752f5403fa0f362479d24e3741417ac28ea9568540fe9936c04e7696&o=&hp=1",
+            "price": 95
           },
           {
             "id": 5018107,
@@ -276,7 +288,8 @@
             "hotel_rating": 3,
             "phone_number": "+1 718-698-5000",
             "website": null,
-            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/528870648.jpg?k=0da951ba1a51b38f2e36fc167fbf5bee54a3a71a7275251fa10ed98a6ae91fc5&o=&hp=1"
+            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/528870648.jpg?k=0da951ba1a51b38f2e36fc167fbf5bee54a3a71a7275251fa10ed98a6ae91fc5&o=&hp=1",
+            "price": 70
           },
           {
             "id": 700390,
@@ -288,7 +301,8 @@
             "hotel_rating": 4.5,
             "phone_number": null,
             "website": null,
-            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/175344522.jpg?k=0214d0269372dae1ed4174c2bff60e29ccce32fb81552c0f493abc1642d5de81&o=&hp=1"
+            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/175344522.jpg?k=0214d0269372dae1ed4174c2bff60e29ccce32fb81552c0f493abc1642d5de81&o=&hp=1",
+            "price": 100
           },
           {
             "id": 742946,
@@ -300,7 +314,8 @@
             "hotel_rating": 4,
             "phone_number": null,
             "website": null,
-            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/40322069.jpg?k=fc0e13e33835cef733fd7d62815e658bb13521bcea7fc10d19cb546d7f8ebf3e&o=&hp=1"
+            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/40322069.jpg?k=fc0e13e33835cef733fd7d62815e658bb13521bcea7fc10d19cb546d7f8ebf3e&o=&hp=1",
+            "price": 95
           },
           {
             "id": 776932,
@@ -312,7 +327,8 @@
             "hotel_rating": 4,
             "phone_number": "+1 212-475-1920",
             "website": "https://freehandhotels.com/new-york/rooms/",
-            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/19121630.jpg?k=444b3f9c3abc49815c1c600c32110e6feba15f1385fe6baade43291372be3656&o=&hp=1"
+            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/19121630.jpg?k=444b3f9c3abc49815c1c600c32110e6feba15f1385fe6baade43291372be3656&o=&hp=1",
+            "price": 90
           },
           {
             "id": 741741,
@@ -324,7 +340,8 @@
             "hotel_rating": 2,
             "phone_number": null,
             "website": null,
-            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/40322031.jpg?k=b0d9ceffb100a41e9b638578041aa642ba626310884e77738191957367ffbe53&o=&hp=1"
+            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/40322031.jpg?k=b0d9ceffb100a41e9b638578041aa642ba626310884e77738191957367ffbe53&o=&hp=1",
+            "price": 70
           },
           {
             "id": 716815,
@@ -336,7 +353,8 @@
             "hotel_rating": 3,
             "phone_number": null,
             "website": null,
-            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/528870032.jpg?k=093f03d452031f015c795cc1c00c6ede5fb3ca5d8e00fe9fe0188b6fd1f7b9e7&o=&hp=1"
+            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/528870032.jpg?k=093f03d452031f015c795cc1c00c6ede5fb3ca5d8e00fe9fe0188b6fd1f7b9e7&o=&hp=1",
+            "price": 85
           },
           {
             "id": 802583,
@@ -348,7 +366,8 @@
             "hotel_rating": 5,
             "phone_number": "+1 212 842 5500",
             "website": null,
-            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/438443954.webp?k=1fadc9937ff0ea1ea64a0cba4a79319f99f8b6c4d502422c3fc741aa7e13eea6&o="
+            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/438443954.webp?k=1fadc9937ff0ea1ea64a0cba4a79319f99f8b6c4d502422c3fc741aa7e13eea6&o=",
+            "price": 110
           },
           {
             "id": 5018106,
@@ -360,7 +379,8 @@
             "hotel_rating": 3,
             "phone_number": null,
             "website": null,
-            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/627304016.jpg?k=235c345d948d115a7bfdaca60fbed9b39b6d305e94b7ecf6d73993d25f70c776&o=&hp=1"
+            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/627304016.jpg?k=235c345d948d115a7bfdaca60fbed9b39b6d305e94b7ecf6d73993d25f70c776&o=&hp=1",
+            "price": 80
           },
           {
             "id": 751736,
@@ -372,7 +392,8 @@
             "hotel_rating": 3,
             "phone_number": "+1 703-261-5677",
             "website": null,
-            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/627304026.jpg?k=83c1fed5afe4e672967601894a376412b2e356e1c21613a316c6d2f96c87364f&o=&hp=1"
+            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/627304026.jpg?k=83c1fed5afe4e672967601894a376412b2e356e1c21613a316c6d2f96c87364f&o=&hp=1",
+            "price": 75
           },
           {
             "id": 386689,
@@ -384,7 +405,8 @@
             "hotel_rating": 2.5,
             "phone_number": null,
             "website": null,
-            "img": "https://www.boston-hotels-info.com/data/Photos/OriginalPhoto/6788/678844/678844263/boston-back-bay-suites-photo-9.JPEG"
+            "img": "https://www.boston-hotels-info.com/data/Photos/OriginalPhoto/6788/678844/678844263/boston-back-bay-suites-photo-9.JPEG",
+            "price": 70
           },
           {
             "id": 567484,
@@ -396,7 +418,8 @@
             "hotel_rating": 3.5,
             "phone_number": null,
             "website": null,
-            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/57979197.jpg?k=815f5bc77cd26344fe7973bfd113b7c13fe5fe42a4151e29048f5f932d228717&o=&hp=1"
+            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/57979197.jpg?k=815f5bc77cd26344fe7973bfd113b7c13fe5fe42a4151e29048f5f932d228717&o=&hp=1",
+            "price": 75
           },
           {
             "id": 677300,
@@ -408,7 +431,8 @@
             "hotel_rating": 4,
             "phone_number": null,
             "website": null,
-            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/39349076.jpg?k=845d5e34bdd82d631a2e7d5bf0109a5df2e692243e33b0045797192e59ddec41&o=&hp=1"
+            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/39349076.jpg?k=845d5e34bdd82d631a2e7d5bf0109a5df2e692243e33b0045797192e59ddec41&o=&hp=1",
+            "price": 85
           },
           {
             "id": 820605,
@@ -417,10 +441,11 @@
             "city": "Бостон",
             "state": "MA",
             "country_code": "US",
-            "hotel_rating": null,
+            "hotel_rating": 2,
             "phone_number": null,
             "website": null,
-            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/142391291.jpg?k=03c298fc8bebc386cde8c1f2d8e4c537693ac5d3d8bbedff64d085cc316bb172&o=&hp=1"
+            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/142391291.jpg?k=03c298fc8bebc386cde8c1f2d8e4c537693ac5d3d8bbedff64d085cc316bb172&o=&hp=1",
+            "price": 60
           },
           {
             "id": 731189,
@@ -432,7 +457,8 @@
             "hotel_rating": 3.5,
             "phone_number": null,
             "website": null,
-            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/247215246.jpg?k=8c66f55b27d6b3aa8f4f713b54b62b61bbd869c2c34f1cde90a673863155fdb0&o=&hp=1"
+            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/247215246.jpg?k=8c66f55b27d6b3aa8f4f713b54b62b61bbd869c2c34f1cde90a673863155fdb0&o=&hp=1",
+            "price": 80
           },
           {
             "id": 721848,
@@ -444,7 +470,8 @@
             "hotel_rating": 3.5,
             "phone_number": null,
             "website": null,
-            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/434649740.jpg?k=2ec7f2f6e55bd15e2e13b79c5bc76b7be3b88d75d6b76d2464a21a1ebf1c6daf&o=&hp=1"
+            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/434649740.jpg?k=2ec7f2f6e55bd15e2e13b79c5bc76b7be3b88d75d6b76d2464a21a1ebf1c6daf&o=&hp=1",
+            "price": 80
           },
           {
             "id": 677341,
@@ -456,7 +483,8 @@
             "hotel_rating": 3.5,
             "phone_number": null,
             "website": null,
-            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/251445652.jpg?k=18026c49fc950102afdeb19e10ac0d3cabea540eb0ce03e4273858e864360129&o=&hp=1"
+            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/251445652.jpg?k=18026c49fc950102afdeb19e10ac0d3cabea540eb0ce03e4273858e864360129&o=&hp=1",
+            "price": 80
           },
           {
             "id": 677347,
@@ -468,7 +496,8 @@
             "hotel_rating": 3.5,
             "phone_number": null,
             "website": null,
-            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/513631600.jpg?k=98d65003d290a0260c44cd3d1d608a39b33e6f164e8e8d0169e367920fce3c57&o=&hp=1"
+            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/513631600.jpg?k=98d65003d290a0260c44cd3d1d608a39b33e6f164e8e8d0169e367920fce3c57&o=&hp=1",
+            "price": 80
           },
           {
             "id": 810445,
@@ -480,7 +509,8 @@
             "hotel_rating": 3.5,
             "phone_number": null,
             "website": null,
-            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/598576737.jpg?k=5e3b9225c7721aa122223176bad816d4697f779a08204bca11f0dbfbc1f38bc2&o=&hp=1"
+            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/598576737.jpg?k=5e3b9225c7721aa122223176bad816d4697f779a08204bca11f0dbfbc1f38bc2&o=&hp=1",
+            "price": 80
           },
           {
             "id": 677372,
@@ -492,7 +522,8 @@
             "hotel_rating": 3,
             "phone_number": null,
             "website": null,
-            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/622776862.jpg?k=6c7ddf418c59e47ff385ad057dbc44ac561445917c820570282ad448282f335b&o=&hp=1"
+            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/622776862.jpg?k=6c7ddf418c59e47ff385ad057dbc44ac561445917c820570282ad448282f335b&o=&hp=1",
+            "price": 75
           },
           {
             "id": 822534,
@@ -501,10 +532,11 @@
             "city": "Бостон",
             "state": "MA",
             "country_code": "US",
-            "hotel_rating": null,
+            "hotel_rating": 2,
             "phone_number": null,
             "website": null,
-            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/247215246.jpg?k=8c66f55b27d6b3aa8f4f713b54b62b61bbd869c2c34f1cde90a673863155fdb0&o=&hp=1"
+            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/247215246.jpg?k=8c66f55b27d6b3aa8f4f713b54b62b61bbd869c2c34f1cde90a673863155fdb0&o=&hp=1",
+            "price": 65
           },
           {
             "id": 793847,
@@ -516,7 +548,8 @@
             "hotel_rating": 4,
             "phone_number": null,
             "website": null,
-            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/203820450.jpg?k=5f2afe83f8b633dc14366600e1406c2544a259fc0c4257cc7b9f93adb59f19fe&o=&hp=1"
+            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/203820450.jpg?k=5f2afe83f8b633dc14366600e1406c2544a259fc0c4257cc7b9f93adb59f19fe&o=&hp=1",
+            "price": 80
           },
           {
             "id": 677396,
@@ -528,7 +561,8 @@
             "hotel_rating": 4,
             "phone_number": null,
             "website": null,
-            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/223443641.jpg?k=1c87a0a348b082a87d6d58d2105e2455b68f91d2730ad1f7952539a22d462fd2&o=&hp=1"
+            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/223443641.jpg?k=1c87a0a348b082a87d6d58d2105e2455b68f91d2730ad1f7952539a22d462fd2&o=&hp=1",
+            "price": 80
           },
           {
             "id": 677411,
@@ -540,7 +574,8 @@
             "hotel_rating": 3.5,
             "phone_number": null,
             "website": null,
-            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/203821098.jpg?k=24d62dd78d844565851708478475881c71c58e269993e874839a7659135ea499&o=&hp=1"
+            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/203821098.jpg?k=24d62dd78d844565851708478475881c71c58e269993e874839a7659135ea499&o=&hp=1",
+            "price": 80
           },
           {
             "id": 677410,
@@ -552,7 +587,8 @@
             "hotel_rating": 3.5,
             "phone_number": null,
             "website": null,
-            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/192532918.jpg?k=b7d3a2ddf37e846da4efc93a22bc115b775ea261f765ac85ccefd016a831157e&o=&hp=1"
+            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/192532918.jpg?k=b7d3a2ddf37e846da4efc93a22bc115b775ea261f765ac85ccefd016a831157e&o=&hp=1",
+            "price": 80
           },
           {
             "id": 677425,
@@ -564,7 +600,8 @@
             "hotel_rating": 4,
             "phone_number": null,
             "website": null,
-            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/465628845.jpg?k=c1892ca903845a6606d012f29dcbb83f545253f9e0eac38f5431215699effb1c&o=&hp=1"
+            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/465628845.jpg?k=c1892ca903845a6606d012f29dcbb83f545253f9e0eac38f5431215699effb1c&o=&hp=1",
+            "price": 80
           },
           {
             "id": 677426,
@@ -576,7 +613,8 @@
             "hotel_rating": 4,
             "phone_number": null,
             "website": null,
-            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/630036272.jpg?k=1ecf8368130ec65ec4a9f89ac45fea8153129b8523b9d31cfeb881800df4dfe7&o=&hp=1"
+            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/630036272.jpg?k=1ecf8368130ec65ec4a9f89ac45fea8153129b8523b9d31cfeb881800df4dfe7&o=&hp=1",
+            "price": 80
           },
           {
             "id": 721859,
@@ -588,7 +626,8 @@
             "hotel_rating": 4,
             "phone_number": null,
             "website": null,
-            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/630036294.jpg?k=4448baeb317efe47dc58884edd2bea0d93f35917000a6c310dab27faed43ff05&o=&hp=1"
+            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/630036294.jpg?k=4448baeb317efe47dc58884edd2bea0d93f35917000a6c310dab27faed43ff05&o=&hp=1",
+            "price": 80
           },
           {
             "id": 801610,
@@ -600,7 +639,8 @@
             "hotel_rating": 4,
             "phone_number": null,
             "website": null,
-            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/247215246.jpg?k=8c66f55b27d6b3aa8f4f713b54b62b61bbd869c2c34f1cde90a673863155fdb0&o=&hp=1"
+            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/247215246.jpg?k=8c66f55b27d6b3aa8f4f713b54b62b61bbd869c2c34f1cde90a673863155fdb0&o=&hp=1",
+            "price": 80
           },
           {
             "id": 677429,
@@ -612,7 +652,8 @@
             "hotel_rating": 3.5,
             "phone_number": null,
             "website": null,
-            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/251445652.jpg?k=18026c49fc950102afdeb19e10ac0d3cabea540eb0ce03e4273858e864360129&o=&hp=1"
+            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/251445652.jpg?k=18026c49fc950102afdeb19e10ac0d3cabea540eb0ce03e4273858e864360129&o=&hp=1",
+            "price": 80
           },
           {
             "id": 677433,
@@ -624,7 +665,8 @@
             "hotel_rating": 4,
             "phone_number": null,
             "website": null,
-            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/626905023.jpg?k=fc1811bb21b5209d6e0bf201b3c52772af41c7b2b48a9756de539e85add1967f&o=&hp=1"
+            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/626905023.jpg?k=fc1811bb21b5209d6e0bf201b3c52772af41c7b2b48a9756de539e85add1967f&o=&hp=1",
+            "price": 80
           },
           {
             "id": 677449,
@@ -636,7 +678,8 @@
             "hotel_rating": 4,
             "phone_number": null,
             "website": null,
-            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/626905048.jpg?k=d3f329124761823fda2857188dd5718ddd9176986fbb63989d3a4c348737fe0c&o=&hp=1"
+            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/626905048.jpg?k=d3f329124761823fda2857188dd5718ddd9176986fbb63989d3a4c348737fe0c&o=&hp=1",
+            "price": 80
           },
           {
             "id": 677450,
@@ -648,7 +691,8 @@
             "hotel_rating": 3.5,
             "phone_number": null,
             "website": null,
-            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/626905056.jpg?k=92e2b71a49faa7b140d1e5a7e2947532703b1fff0ce68e879b0c5ef8430f16f1&o=&hp=1"
+            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/626905056.jpg?k=92e2b71a49faa7b140d1e5a7e2947532703b1fff0ce68e879b0c5ef8430f16f1&o=&hp=1",
+            "price": 80
           },
           {
             "id": 677452,
@@ -660,7 +704,8 @@
             "hotel_rating": 4,
             "phone_number": null,
             "website": null,
-            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/626905111.jpg?k=5cfa405a896162edd1d1e99a0c1502241ccb89aec31feafe5ad85788da45a410&o=&hp=1"
+            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/626905111.jpg?k=5cfa405a896162edd1d1e99a0c1502241ccb89aec31feafe5ad85788da45a410&o=&hp=1",
+            "price": 80
           },
           {
             "id": 677455,
@@ -672,7 +717,8 @@
             "hotel_rating": 3,
             "phone_number": null,
             "website": null,
-            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/480983021.jpg?k=7c8a7870dc5c73e54211277a716d1666b5a256cceffd1b1c1354e7d700446d87&o=&hp=1"
+            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/480983021.jpg?k=7c8a7870dc5c73e54211277a716d1666b5a256cceffd1b1c1354e7d700446d87&o=&hp=1",
+            "price": 80
           },
           {
             "id": 677470,
@@ -684,7 +730,8 @@
             "hotel_rating": 4,
             "phone_number": null,
             "website": null,
-            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/598576737.jpg?k=5e3b9225c7721aa122223176bad816d4697f779a08204bca11f0dbfbc1f38bc2&o=&hp=1"
+            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/598576737.jpg?k=5e3b9225c7721aa122223176bad816d4697f779a08204bca11f0dbfbc1f38bc2&o=&hp=1",
+            "price": 80
           },
           {
             "id": 677476,
@@ -696,7 +743,8 @@
             "hotel_rating": 3.5,
             "phone_number": null,
             "website": null,
-            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/218868212.jpg?k=faeb549e5fd87f0d02fc3b4cb6f945d20c15e223ad60fcf666e4c11f3b06bf70&o=&hp=1"
+            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/218868212.jpg?k=faeb549e5fd87f0d02fc3b4cb6f945d20c15e223ad60fcf666e4c11f3b06bf70&o=&hp=1",
+            "price": 80
           },
           {
             "id": 677477,
@@ -708,7 +756,8 @@
             "hotel_rating": 3.5,
             "phone_number": null,
             "website": null,
-            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/598576691.jpg?k=560eaa7bf6e42d0e629a7a4cdd7f43c1019f65b13f0fa6454e5f74cc3d25605e&o=&hp=1"
+            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/598576691.jpg?k=560eaa7bf6e42d0e629a7a4cdd7f43c1019f65b13f0fa6454e5f74cc3d25605e&o=&hp=1",
+            "price": 80
           },
           {
             "id": 677480,
@@ -720,7 +769,8 @@
             "hotel_rating": 3.5,
             "phone_number": null,
             "website": null,
-            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/584977053.jpg?k=6ec3eb4cda50ce67d3c6824f972e20d25a1954143628b661e731180c60c689da&o=&hp=1"
+            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/584977053.jpg?k=6ec3eb4cda50ce67d3c6824f972e20d25a1954143628b661e731180c60c689da&o=&hp=1",
+            "price": 80
           },
           {
             "id": 677481,
@@ -732,7 +782,8 @@
             "hotel_rating": 3.5,
             "phone_number": null,
             "website": null,
-            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/584977063.jpg?k=ea0f1136ea2af9e1bd0e2bbb17c854dba891ab49e71ab9bb3ee83caebfa0b747&o=&hp=1"
+            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/584977063.jpg?k=ea0f1136ea2af9e1bd0e2bbb17c854dba891ab49e71ab9bb3ee83caebfa0b747&o=&hp=1",
+            "price": 80
           },
           {
             "id": 677519,
@@ -744,7 +795,8 @@
             "hotel_rating": 4,
             "phone_number": null,
             "website": null,
-            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/513631600.jpg?k=98d65003d290a0260c44cd3d1d608a39b33e6f164e8e8d0169e367920fce3c57&o=&hp=1"
+            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/513631600.jpg?k=98d65003d290a0260c44cd3d1d608a39b33e6f164e8e8d0169e367920fce3c57&o=&hp=1",
+            "price": 80
           },
           {
             "id": 677520,
@@ -756,7 +808,8 @@
             "hotel_rating": 3.5,
             "phone_number": null,
             "website": null,
-            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/513631706.jpg?k=e846f23c54d015f1a0aaa823424d5da017c4cd86b7887146c22f45dfdc6b744c&o=&hp=1"
+            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/513631706.jpg?k=e846f23c54d015f1a0aaa823424d5da017c4cd86b7887146c22f45dfdc6b744c&o=&hp=1",
+            "price": 80
           },
           {
             "id": 705227,
@@ -768,7 +821,8 @@
             "hotel_rating": 3.5,
             "phone_number": null,
             "website": null,
-            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/513631679.jpg?k=fbb372a228fed3bfa1ffeaca8367c9afb044fdcf6c8ed985b7097cd032384b2b&o=&hp=1"
+            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/513631679.jpg?k=fbb372a228fed3bfa1ffeaca8367c9afb044fdcf6c8ed985b7097cd032384b2b&o=&hp=1",
+            "price": 80
           },
           {
             "id": 696618,
@@ -780,7 +834,8 @@
             "hotel_rating": 4,
             "phone_number": null,
             "website": null,
-            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/506101728.jpg?k=00d2fcbf331d6d38cd97c4539ba531d8b92fd54f163fb2b25a406dd90482ff62&o=&hp=1"
+            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/506101728.jpg?k=00d2fcbf331d6d38cd97c4539ba531d8b92fd54f163fb2b25a406dd90482ff62&o=&hp=1",
+            "price": 80
           },
           {
             "id": 677526,
@@ -792,7 +847,8 @@
             "hotel_rating": 3.5,
             "phone_number": null,
             "website": null,
-            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/506102746.jpg?k=fb443b34abea7f4a9aeb0ad42eb124116de0447ce6aafa230b74ded7e38aa5bd&o=&hp=1"
+            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/506102746.jpg?k=fb443b34abea7f4a9aeb0ad42eb124116de0447ce6aafa230b74ded7e38aa5bd&o=&hp=1",
+            "price": 80
           },
           {
             "id": 677527,
@@ -804,7 +860,8 @@
             "hotel_rating": 3.5,
             "phone_number": null,
             "website": null,
-            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/506103453.jpg?k=f0ce2fa04bee24e6ed9c532822213f2a29adc2b2a749fc9ba7016da0b4dcfd82&o=&hp=1"
+            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/506103453.jpg?k=f0ce2fa04bee24e6ed9c532822213f2a29adc2b2a749fc9ba7016da0b4dcfd82&o=&hp=1",
+            "price": 80
           },
           {
             "id": 677528,
@@ -816,7 +873,8 @@
             "hotel_rating": 3.5,
             "phone_number": null,
             "website": null,
-            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/434649740.jpg?k=2ec7f2f6e55bd15e2e13b79c5bc76b7be3b88d75d6b76d2464a21a1ebf1c6daf&o=&hp=1"
+            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/434649740.jpg?k=2ec7f2f6e55bd15e2e13b79c5bc76b7be3b88d75d6b76d2464a21a1ebf1c6daf&o=&hp=1",
+            "price": 80
           },
           {
             "id": 677537,
@@ -828,7 +886,8 @@
             "hotel_rating": 3.5,
             "phone_number": null,
             "website": null,
-            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/421205653.jpg?k=4fc80f26693f3eac040af5c6ab43a84e87a45788d52a680bc29de5af88946d3e&o=&hp=1"
+            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/421205653.jpg?k=4fc80f26693f3eac040af5c6ab43a84e87a45788d52a680bc29de5af88946d3e&o=&hp=1",
+            "price": 80
           },
           {
             "id": 696614,
@@ -840,7 +899,8 @@
             "hotel_rating": 3.5,
             "phone_number": null,
             "website": null,
-            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/434649539.jpg?k=82ecc887502f95260ca458abf23d2ee6980b87a7b84141fc3b1860fea7c90e16&o=&hp=1"
+            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/434649539.jpg?k=82ecc887502f95260ca458abf23d2ee6980b87a7b84141fc3b1860fea7c90e16&o=&hp=1",
+            "price": 80
           },
           {
             "id": 677694,
@@ -852,7 +912,8 @@
             "hotel_rating": 4,
             "phone_number": null,
             "website": null,
-            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/602982083.jpg?k=5fcfce75f9f49c03d40816716a152394c724c84cf855e0b33e8f2bb054a7e2b4&o=&hp=1"
+            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/602982083.jpg?k=5fcfce75f9f49c03d40816716a152394c724c84cf855e0b33e8f2bb054a7e2b4&o=&hp=1",
+            "price": 80
           },
           {
             "id": 677550,
@@ -864,7 +925,8 @@
             "hotel_rating": 3,
             "phone_number": null,
             "website": null,
-            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/602982084.jpg?k=8dfddff10c087972c0f9dfebee6d3781a3abc2934c1fd799da2945fb39b00a8c&o=&hp=1"
+            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/602982084.jpg?k=8dfddff10c087972c0f9dfebee6d3781a3abc2934c1fd799da2945fb39b00a8c&o=&hp=1",
+            "price": 80
           },
           {
             "id": 787996,
@@ -876,7 +938,8 @@
             "hotel_rating": 4,
             "phone_number": null,
             "website": null,
-            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/602982199.jpg?k=daba77301989edf933e932c0ea6bf495ab6bbcd918d52c1ea86f80502349ec65&o=&hp=1"
+            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/602982199.jpg?k=daba77301989edf933e932c0ea6bf495ab6bbcd918d52c1ea86f80502349ec65&o=&hp=1",
+            "price": 80
           },
           {
             "id": 731262,
@@ -888,7 +951,8 @@
             "hotel_rating": 3.5,
             "phone_number": null,
             "website": null,
-            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/602987782.jpg?k=8294e0e509c032a04054681446be384f3cb7b6735b6b41503b8bcaf39eb9fc61&o=&hp=1"
+            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/602987782.jpg?k=8294e0e509c032a04054681446be384f3cb7b6735b6b41503b8bcaf39eb9fc61&o=&hp=1",
+            "price": 80
           },
           {
             "id": 677559,
@@ -900,7 +964,8 @@
             "hotel_rating": 4,
             "phone_number": null,
             "website": null,
-            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/602987829.jpg?k=fdf0ae70c219a98b264ab00f77c8abc463a79b06f3b2e41969ef596d85e39c72&o=&hp=1"
+            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/602987829.jpg?k=fdf0ae70c219a98b264ab00f77c8abc463a79b06f3b2e41969ef596d85e39c72&o=&hp=1",
+            "price": 80
           },
           {
             "id": 677565,
@@ -912,7 +977,8 @@
             "hotel_rating": 4,
             "phone_number": null,
             "website": null,
-            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/602989870.jpg?k=ab6b89f09e5c2fb2e1024408d0d70bcfc072b7df437e6cacbf52402570b70482&o=&hp=1"
+            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/602989870.jpg?k=ab6b89f09e5c2fb2e1024408d0d70bcfc072b7df437e6cacbf52402570b70482&o=&hp=1",
+            "price": 80
           },
           {
             "id": 677571,
@@ -924,7 +990,8 @@
             "hotel_rating": 3.5,
             "phone_number": null,
             "website": null,
-            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/602989878.jpg?k=c495e1f804d98f761973aa25b0a055d64e0ac585cb1d5c77a992c3ab5be026a6&o=&hp=1"
+            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/602989878.jpg?k=c495e1f804d98f761973aa25b0a055d64e0ac585cb1d5c77a992c3ab5be026a6&o=&hp=1",
+            "price": 80
           },
           {
             "id": 724715,
@@ -936,7 +1003,8 @@
             "hotel_rating": 4,
             "phone_number": null,
             "website": null,
-            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/602989868.jpg?k=9880bacc6336a50b56fad671f9a0ab90dd2d0bce5810df7d4ddbf660c4f52e8f&o=&hp=1"
+            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/602989868.jpg?k=9880bacc6336a50b56fad671f9a0ab90dd2d0bce5810df7d4ddbf660c4f52e8f&o=&hp=1",
+            "price": 80
           },
           {
             "id": 677574,
@@ -948,7 +1016,8 @@
             "hotel_rating": 4,
             "phone_number": null,
             "website": null,
-            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/602989914.jpg?k=5ab12645246447c122b575cdf7b4eda35b56001ccc275241b1da0007bb86da7d&o=&hp=1"
+            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/602989914.jpg?k=5ab12645246447c122b575cdf7b4eda35b56001ccc275241b1da0007bb86da7d&o=&hp=1",
+            "price": 80
           },
           {
             "id": 677577,
@@ -960,7 +1029,8 @@
             "hotel_rating": 3.5,
             "phone_number": null,
             "website": null,
-            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/603609501.jpg?k=b6526d393577bde5452efe4b8f39f058aca667c52c8e055dcac46cef312e3b5a&o=&hp=1"
+            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/603609501.jpg?k=b6526d393577bde5452efe4b8f39f058aca667c52c8e055dcac46cef312e3b5a&o=&hp=1",
+            "price": 80
           },
           {
             "id": 757401,
@@ -972,7 +1042,8 @@
             "hotel_rating": 3.5,
             "phone_number": null,
             "website": null,
-            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/603609504.jpg?k=409452c00910a8b9de38ac7fbd7674bbc68ce39f7cba8ebb72a484ef103d6057&o=&hp=1"
+            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/603609504.jpg?k=409452c00910a8b9de38ac7fbd7674bbc68ce39f7cba8ebb72a484ef103d6057&o=&hp=1",
+            "price": 80
           },
           {
             "id": 14124124,
@@ -984,7 +1055,8 @@
             "hotel_rating": 3,
             "phone_number": "+1 407-555-1234",
             "website": null,
-            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/488424808.webp?k=07c8c2e15fc9aaa78164f96e1a9167677b3cbb09f9d32b5acb67d81613c2a9f9&o="
+            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/488424808.webp?k=07c8c2e15fc9aaa78164f96e1a9167677b3cbb09f9d32b5acb67d81613c2a9f9&o=",
+            "price": 80
           },
           {
             "id": 24124124,
@@ -996,7 +1068,8 @@
             "hotel_rating": 4,
             "phone_number": "+1 407-555-5678",
             "website": null,
-            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/73844933.webp?k=b8fa1486a0064b762d3fe0592550c9c663b51d09a09261fd8868e19919285b77&o="
+            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/73844933.webp?k=b8fa1486a0064b762d3fe0592550c9c663b51d09a09261fd8868e19919285b77&o=",
+            "price": 80
           },
           {
             "id": 3214124,
@@ -1008,7 +1081,8 @@
             "hotel_rating": 3.5,
             "phone_number": "+1 407-555-2345",
             "website": null,
-            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/517163857.webp?k=a477d0059b07b57f644b7bcef36dcbdbe62d6dad75602a43290a92a506bf5cb1&o="
+            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/517163857.webp?k=a477d0059b07b57f644b7bcef36dcbdbe62d6dad75602a43290a92a506bf5cb1&o=",
+            "price": 80
           },
           {
             "id": 421412412,
@@ -1020,7 +1094,8 @@
             "hotel_rating": 4,
             "phone_number": "+1 407-555-6789",
             "website": null,
-            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/517163907.webp?k=0e3c4a48562529aa5c4222d80547d3c001c0b641a5354b34974f16ee3ba08a6c&o="
+            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/517163907.webp?k=0e3c4a48562529aa5c4222d80547d3c001c0b641a5354b34974f16ee3ba08a6c&o=",
+            "price": 80
           },
           {
             "id": 5412414,
@@ -1032,7 +1107,8 @@
             "hotel_rating": 4,
             "phone_number": "+1 407-555-3456",
             "website": null,
-            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/362808900.webp?k=725074438e82d51c0e0a146bc52b4b8afe9964b8379feb9d071720e9b0c9b00c&o="
+            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/362808900.webp?k=725074438e82d51c0e0a146bc52b4b8afe9964b8379feb9d071720e9b0c9b00c&o=",
+            "price": 80
           },
           {
             "id": 6123124,
@@ -1044,7 +1120,8 @@
             "hotel_rating": 4.5,
             "phone_number": "+1 407-555-7890",
             "website": null,
-            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/100943297.webp?k=a14b7fd5a245383b94ebd45a37bb61f0d5b4c75148f68e7f0c4246e1a91e7a0f&o="
+            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/100943297.webp?k=a14b7fd5a245383b94ebd45a37bb61f0d5b4c75148f68e7f0c4246e1a91e7a0f&o=",
+            "price": 80
           },
           {
             "id": 7413414,
@@ -1056,7 +1133,8 @@
             "hotel_rating": 3.5,
             "phone_number": "+1 863-555-1234",
             "website": null,
-            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/504223635.jpg?k=07e7709b6776cf442502b93ea78a1bfde987742ccc7b53d6357541cbd472c44a&o=&hp=1"
+            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/504223635.jpg?k=07e7709b6776cf442502b93ea78a1bfde987742ccc7b53d6357541cbd472c44a&o=&hp=1",
+            "price": 80
           },
           {
             "id": 85463443,
@@ -1068,7 +1146,8 @@
             "hotel_rating": 4,
             "phone_number": "+1 863-555-5678",
             "website": null,
-            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/430202629.webp?k=cb474037caeb4851353753dc2a119e1c684892405746689fdcd70d8735a0d235&o="
+            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/430202629.webp?k=cb474037caeb4851353753dc2a119e1c684892405746689fdcd70d8735a0d235&o=",
+            "price": 80
           },
           {
             "id": 9412312,
@@ -1080,7 +1159,8 @@
             "hotel_rating": 4.5,
             "phone_number": "+1 213-555-1234",
             "website": null,
-            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/154863619.jpg?k=936b2702e316de36667fc2b9b4edb2e7fd36ce6d931529a94faa81a987e4e349&o=&hp=1"
+            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/154863619.jpg?k=936b2702e316de36667fc2b9b4edb2e7fd36ce6d931529a94faa81a987e4e349&o=&hp=1",
+            "price": 80
           },
           {
             "id": 103123,
@@ -1092,7 +1172,8 @@
             "hotel_rating": 5,
             "phone_number": "+1 213-555-5678",
             "website": null,
-            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/622735651.jpg?k=e18dd647ab09a50cebcc022639ba43e66da1f5fca9ec9c0ef91d836c3e6cfcb9&o=&hp=1"
+            "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/622735651.jpg?k=e18dd647ab09a50cebcc022639ba43e66da1f5fca9ec9c0ef91d836c3e6cfcb9&o=&hp=1",
+            "price": 80
           }
     ]
 }

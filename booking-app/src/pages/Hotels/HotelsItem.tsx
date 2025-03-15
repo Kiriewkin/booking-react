@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Card, Popover, Rate } from "antd";
 import { useNavigate } from "react-router-dom";
 import { HeartOutlined, HeartFilled } from "@ant-design/icons";
+import { t } from "i18next";
 
 import { getLocalStorage, setLocalStorage } from "../../utils/localStorage";
 
@@ -18,6 +19,7 @@ type Hotel = {
     phone_number: string | null;
     website: string | null;
     img: string;
+    price: number
 };
 
 type HotelProps = {
@@ -62,6 +64,7 @@ const HotelsItem: React.FC<HotelProps> = ({ hotel }) => {
             <p className="hotel-country-code">Country Code: {hotel.country_code}</p>
             {hotel.phone_number && <a href={`tel:${hotel.phone_number}`} className="hotel-phone">Phone: {hotel.phone_number}</a>}
             {hotel.website && <a href={`${hotel.website}`} className="hotel-website">Website</a>}
+            <p className="hotel-country-code">{t("priceForNight")} {hotel.price}$</p>
             <div style={{ display: "flex", justifyContent: "space-between" }}>
                 <Rate disabled defaultValue={hotel.hotel_rating} className="hotel-rating" />
                 <Popover

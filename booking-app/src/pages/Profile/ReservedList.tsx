@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { fetchReservedHotel, fetchHotelById } from "../../store/thunks/hotelsThunk";
 import { RootState, AppDispatch } from "../../store";
 import { useDispatch, useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
 
 export default function ReservedList() {
     type Hotel = {
@@ -17,6 +18,7 @@ export default function ReservedList() {
         img: string;
     };
 
+    const { t } = useTranslation();
     const dispatch: AppDispatch = useDispatch();
     const reservedHotels = useSelector((state: RootState) => state.hotels.reservedHotels?.favoriteHotels || []);
     const [hotelData, setHotelData] = useState<Hotel[]>([]);
@@ -62,7 +64,7 @@ export default function ReservedList() {
 
     return (
         <div>
-            <h2>Reserved Hotels</h2>
+            <h2>{t("reservedHotels")}</h2>
             {hotelData.length > 0 ? (
                 <ul>
                     {hotelData.map((hotel, index) => (

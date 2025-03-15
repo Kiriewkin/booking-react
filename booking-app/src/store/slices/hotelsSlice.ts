@@ -12,6 +12,7 @@ type Hotel = {
   phone_number: string | null;
   website: string | null;
   img: string;
+  price: number;
 };
 
 type City = {
@@ -31,6 +32,10 @@ type HotelsState = {
   selectedHotel: Hotel | null;
   loading: boolean;
   error: string;
+  sortOrder: string,
+  currentPage: number,
+  totalHotels: number,
+  pageSize: number,
 };
 
 const initialState: HotelsState = {
@@ -43,6 +48,10 @@ const initialState: HotelsState = {
   selectedHotel: null,
   loading: false,
   error: '',
+  sortOrder: '-rating',
+  currentPage: 1,
+  totalHotels: 0,
+  pageSize: 0
 };
 
 const hotelsSlice = createSlice({
@@ -51,7 +60,16 @@ const hotelsSlice = createSlice({
   reducers: {
     resetCity: (state) => {
       state.city = [];
+      state.currentPage = 1;
+      state.sortOrder = '-rating'
     },
+    setSortOrder: (state, action: PayloadAction<string>) => {
+      state.sortOrder = action.payload;
+      state.currentPage = 1;
+    },
+    setPage: (state, action: PayloadAction<number>) => {
+      state.currentPage = action.payload
+    }
   },
   extraReducers: (builder) => {
     builder
@@ -59,10 +77,11 @@ const hotelsSlice = createSlice({
         state.loading = true;
         state.error = '';
       })
-      .addCase(fetchHotels.fulfilled, (state, action: PayloadAction<Hotel[]>) => {
+      .addCase(fetchHotels.fulfilled, (state, action: PayloadAction<{ hotels: Hotel[]; total: number }>) => {
         state.loading = false;
         state.error = '';
-        state.hotels = action.payload;
+        state.hotels = action.payload.hotels;
+        state.totalHotels = action.payload.total
       })
       .addCase(fetchHotels.rejected, (state, action: PayloadAction<string | undefined>) => {
         state.loading = false;
@@ -72,10 +91,11 @@ const hotelsSlice = createSlice({
         state.loading = true;
         state.error = '';
       })
-      .addCase(handleCitySelection.fulfilled, (state, action: PayloadAction<City[]>) => {
+      .addCase(handleCitySelection.fulfilled, (state, action: PayloadAction<{hotels: City[], total: number}>) => {
         state.loading = false;
         state.error = '';
-        state.city = action.payload;
+        state.city = action.payload.hotels;
+        state.totalHotels = action.payload.total
       })
       .addCase(handleCitySelection.rejected, (state, action: PayloadAction<string | undefined>) => {
         state.loading = false;
@@ -121,5 +141,5 @@ const hotelsSlice = createSlice({
   },
 });
 
-export const { resetCity } = hotelsSlice.actions;
+export const { resetCity, setSortOrder, setPage } = hotelsSlice.actions;
 export default hotelsSlice.reducer;

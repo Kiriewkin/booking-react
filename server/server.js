@@ -276,12 +276,32 @@ app.get('/destination', (req, res) => {
 
 app.get('/hotels', (req, res) => {
     const lang = req.query.lang || 'en';
+    const sort = req.query.sort;
+    const page = parseInt(req.query.page) || 1;
+    const pageSize = parseInt(req.query.pageSize) || 12;
+
     const data = loadData(lang);
-    if (data) {
-        res.json(data.hotels)
-    } else {
-        res.status(500).json({ message: 'Ошибка загрузки данных' });
+    if (!data) {
+        return res.status(500).json({ message: 'Ошибка загрузки данных' });
     }
+
+    let hotels = data.hotels;
+
+    if (sort === "rating") {
+        hotels = hotels.sort((a, b) => a.hotel_rating - b.hotel_rating);
+    } else if (sort === "-rating") {
+        hotels = hotels.sort((a, b) => b.hotel_rating - a.hotel_rating);
+    } else if (sort === "price") {
+        hotels = hotels.sort((a, b) => a.price - b.price);
+    } else if (sort === "-price") {
+        hotels = hotels.sort((a, b) => b.price - a.price);
+    }
+
+    const total = hotels.length;
+    const startIndex = (page - 1) * pageSize;
+    const paginatedHotels = hotels.slice(startIndex, startIndex + pageSize);
+
+    res.json({ hotels: paginatedHotels, total });
 });
 
 app.get("/hotel/:id", (req, res) => {
@@ -320,13 +340,32 @@ app.post('/hotels', (req, res) => {
 app.get('/hotels/city/:city', (req, res) => {
     const { city } = req.params;
     const lang = req.query.lang || 'en';
+    const sort = req.query.sort;
+    const page = parseInt(req.query.page) || 1;
+    const pageSize = parseInt(req.query.pageSize) || 12;
+
     const data = loadData(lang);
-    if (data) {
-        const hotels = data.hotels.filter((hotel) => hotel.city === city);
-        res.json(hotels);
-    } else {
-        res.status(500).json({ message: 'Ошибка загрузки данных для отелей по городу' });
+    if (!data) {
+        return res.status(500).json({ message: 'Ошибка загрузки данных для отелей по городу' });
     }
+
+    let hotels = data.hotels.filter((hotel) => hotel.city === city);
+
+    if (sort === "rating") {
+        hotels = hotels.sort((a, b) => a.hotel_rating - b.hotel_rating);
+    } else if (sort === "-rating") {
+        hotels = hotels.sort((a, b) => b.hotel_rating - a.hotel_rating);
+    } else if (sort === "price") {
+        hotels = hotels.sort((a, b) => a.price - b.price);
+    } else if (sort === "-price") {
+        hotels = hotels.sort((a, b) => b.price - a.price);
+    }
+
+    const total = hotels.length;
+    const startIndex = (page - 1) * pageSize;
+    const paginatedHotels = hotels.slice(startIndex, startIndex + pageSize);
+
+    res.json({ hotels: paginatedHotels, total });
 });
 
 app.get('/hotels/name/:name', (req, res) => {

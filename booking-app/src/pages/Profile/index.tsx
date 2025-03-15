@@ -1,4 +1,5 @@
 import { useEffect, useState, useCallback } from "react";
+import axios from "axios";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import { Avatar, Button, Modal, message } from 'antd';
@@ -9,7 +10,6 @@ import ProfileForm from "./UploadDateUser";
 import ReservedList from "./ReservedList";
 
 import styles from "./index.module.scss"
-import axios from "axios";
 
 interface User {
     name: string;
@@ -113,7 +113,7 @@ export default function Profile() {
     };
 
     return (
-        <div>
+        <div style={{padding: "0 20px"}}>
             {userInfo ? (
                 <div>
                     <h2>{t("hello")}, {userInfo.name}</h2>
