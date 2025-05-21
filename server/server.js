@@ -33,7 +33,7 @@ const saveUsers = (users) => {
 };
 
 const loadData = (lang) => {
-    const filePath = path.join(__dirname, `db${lang.toUpperCase()}.json`);
+    const filePath = path.join(__dirname, `db${lang.charAt(0).toUpperCase()}${lang.slice(1).toLowerCase()}.json`);
     try {
         if (fs.existsSync(filePath)) {
             return JSON.parse(fs.readFileSync(filePath, 'utf8'));
@@ -261,7 +261,7 @@ app.get('/reserved-hotels', async (req, res) => {
         const decoded = jwt.verify(token, SECRET_KEY);
         const users = loadUsers();
         const userIndex = users.findIndex(user => user.id === decoded.id);
-        
+
         if (userIndex === -1) {
             return res.status(404).json({ message: 'User not found' });
         }
@@ -345,7 +345,7 @@ app.post('/hotels', (req, res) => {
     const { city, lang } = req.body;
     console.log("Request body:", req.body);
 
-    const filePath = path.join(__dirname, `db${(lang || 'en').toUpperCase()}.json`);
+    const filePath = path.join(__dirname, `db${lang.charAt(0).toUpperCase()}${lang.slice(1).toLowerCase()}.json`);
     console.log("Looking for file:", filePath);
 
     const data = loadData(lang || 'en');
@@ -405,59 +405,59 @@ app.get('/hotels/name/:name', (req, res) => {
 });
 
 app.post('/hotels/:id/reviews', (req, res) => {
-  const hotelId = parseInt(req.params.id);
-  const { review } = req.body;
+    const hotelId = parseInt(req.params.id);
+    const { review } = req.body;
 
-  if (!review || typeof review !== 'object' || !review.userId || !review.id) {
-    return res.status(400).json({ error: 'Review must include userId and id' });
-  }
+    if (!review || typeof review !== 'object' || !review.userId || !review.id) {
+        return res.status(400).json({ error: 'Review must include userId and id' });
+    }
 
-  // Отзыв, который попадет в базы с отелями
-  const publicReview = {
-    id: review.id,
-    firstName: review.firstName,
-    rating: review.rating,
-    date: review.date,
-    comment: review.comment
-  };
+    // Отзыв, который попадет в базы с отелями
+    const publicReview = {
+        id: review.id,
+        firstName: review.firstName,
+        rating: review.rating,
+        date: review.date,
+        comment: review.comment
+    };
 
-  const addReviewToHotelData = (lang) => {
-    const filePath = path.join(__dirname, `db${lang.toUpperCase()}.json`);
-    if (!fs.existsSync(filePath)) throw new Error(`File for lang ${lang} not found`);
+    const addReviewToHotelData = (lang) => {
+        const filePath = path.join(__dirname, `db${lang.charAt(0).toUpperCase()}${lang.slice(1).toLowerCase()}.json`);
+        if (!fs.existsSync(filePath)) throw new Error(`File for lang ${lang} not found`);
 
-    const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
-    const hotel = data.hotels.find(h => h.id === hotelId);
-    if (!hotel) throw new Error(`Hotel with id ${hotelId} not found in lang ${lang}`);
+        const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+        const hotel = data.hotels.find(h => h.id === hotelId);
+        if (!hotel) throw new Error(`Hotel with id ${hotelId} not found in lang ${lang}`);
 
-    if (!Array.isArray(hotel.reviews)) hotel.reviews = [];
-    hotel.reviews.push(publicReview);
+        if (!Array.isArray(hotel.reviews)) hotel.reviews = [];
+        hotel.reviews.push(publicReview);
 
-    fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
-  };
+        fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
+    };
 
-  const addReviewToUser = (userId, reviewId) => {
-    if (!fs.existsSync(USERS_FILE)) throw new Error(`Users file not found`);
+    const addReviewToUser = (userId, reviewId) => {
+        if (!fs.existsSync(USERS_FILE)) throw new Error(`Users file not found`);
 
-    const users = JSON.parse(fs.readFileSync(USERS_FILE, 'utf8'));
-    const user = users.find(u => u.id === userId);
-    if (!user) throw new Error(`User with id ${userId} not found`);
+        const users = JSON.parse(fs.readFileSync(USERS_FILE, 'utf8'));
+        const user = users.find(u => u.id === userId);
+        if (!user) throw new Error(`User with id ${userId} not found`);
 
-    if (!Array.isArray(user.reviews)) user.reviews = [];
-    if (!user.reviews.includes(reviewId)) user.reviews.push(reviewId);
+        if (!Array.isArray(user.reviews)) user.reviews = [];
+        if (!user.reviews.includes(reviewId)) user.reviews.push(reviewId);
 
-    fs.writeFileSync(USERS_FILE, JSON.stringify(users, null, 2));
-  };
+        fs.writeFileSync(USERS_FILE, JSON.stringify(users, null, 2));
+    };
 
-  try {
-    addReviewToHotelData('en');
-    addReviewToHotelData('ua');
-    addReviewToUser(review.userId, review.id);
+    try {
+        addReviewToHotelData('en');
+        addReviewToHotelData('ua');
+        addReviewToUser(review.userId, review.id);
 
-    res.status(200).json({ message: 'Review successfully saved to hotels and user' });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: error.message });
-  }
+        res.status(200).json({ message: 'Review successfully saved to hotels and user' });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: error.message });
+    }
 });
 
 
