@@ -26,7 +26,7 @@
     "terms2": "Some rooms may require prepayment or have free cancellation.",
     "terms3": "Booking.com is a platform that connects guests to hotels, but is not responsible for the quality of services.",
     "terms4": "It is prohibited to use the platform for fraud or illegal activities.",
-    "legalInformation" : "Legal Information",
+    "legalInformation": "Legal Information",
     "legal1": "Booking.com B.V. (the company behind Booking.com™) is registered and based in Amsterdam, the Netherlands (Booking.com, we, us or our),from where it renders an online accommodation reservation service (the Service) on its website (the Website),and is supported internationally by its local group companies (the support companies)",
     "legal2": "The support companies provide only internal support to Booking.com B.V. The support companies do not render the Service and do not own, operate, or manage the Website or any other website.",
     "legal3": "For all questions about Booking.com, the Service (i.e., the online accommodation reservation service), the Website, or if you wish to send or serve any documents, correspondence, notices, or other communications in respect of Booking.com, the Service, or the Website, please contact Booking.com B.V. directly.",
@@ -99,5 +99,11 @@
     "pay": "Pay",
     "paymentIsBeingProces": "Payment is being processed...",
     "paymentWasSuccessful": "Payment was successful!",
-    "yourPaymentProcessed": "Your payment has been processed."
+    "yourPaymentProcessed": "Your payment has been processed.",
+    "hotelReviews": "Hotel Reviews",
+    "noReviews": "No Reviews",
+    "hotelName": "Hotel name",
+    "addReview": "Add review",
+    "city": "City",
+    "hello": "Hello"
 }
