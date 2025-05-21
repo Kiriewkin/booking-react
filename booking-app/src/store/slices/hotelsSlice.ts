@@ -1,19 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { fetchHotels, handleCitySelection, handleHotelSelection, fetchReservedHotel, fetchHotelById } from "../thunks/hotelsThunk";
-
-type Hotel = {
-  id: number;
-  name: string;
-  city: string;
-  address: string;
-  state: string;
-  country_code: string;
-  hotel_rating: number;
-  phone_number: string | null;
-  website: string | null;
-  img: string;
-  price: number;
-};
+import { Hotel } from "../../types/hotels";
 
 type City = {
   id: number;

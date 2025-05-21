@@ -1,24 +1,11 @@
 import axios from "axios"
 import { createAsyncThunk } from "@reduxjs/toolkit";
+import { Hotel } from "../../types/hotels";
 
 const hotelsUrl = process.env.REACT_APP_HOTELS_GET_URL ?? "";
 const addHotel = process.env.REACT_APP_ADD_HOTEL_TO_PROFILE_POST_URL ?? "";
 const reservedHotel = process.env.REACT_APP_RESERVED_HOTELS_POST_URL ?? "";
 const hotelUrl = process.env.REACT_APP_HOTEL_GET_URL ?? "";
-
-type Hotel = {
-    id: number;
-    name: string;
-    city: string;
-    address: string;
-    state: string;
-    country_code: string;
-    hotel_rating: number;
-    phone_number: string | null
-    website: string | null;
-    img: string;
-    price: number;
-};
 
 type City = {
     id: number;

@@ -64,7 +64,7 @@ app.post('/register', async (req, res) => {
     users.push(newUser);
     saveUsers(users);
 
-    const token = jwt.sign({ id: newUser.id, email }, SECRET_KEY, { expiresIn: "1h" });
+    const token = jwt.sign({ id: newUser.id, email }, SECRET_KEY, { expiresIn: "24h" });
 
     res.json({ user: { id: newUser.id, name, email }, token });
 });
@@ -78,9 +78,9 @@ app.post('/login', async (req, res) => {
         return res.status(401).json({ message: "Invalid credentials" });
     }
 
-    const token = jwt.sign({ id: user.id, email }, SECRET_KEY, { expiresIn: "1h" });
+    const token = jwt.sign({ id: user.id, email }, SECRET_KEY, { expiresIn: "24h" });
 
-    res.json({ user: { id: user.id, name: user.name, email: user.email, img: user.img }, token });
+    res.json({ user: { id: user.id, name: user.name, email: user.email, img: user.img, reviews: user.reviews }, token });
 });
 
 app.get('/profile', (req, res) => {
@@ -95,6 +95,21 @@ app.get('/profile', (req, res) => {
         res.status(401).json({ message: "Invalid Token" });
     }
 });
+
+app.get('/users/:id', (req, res) => {
+    const users = loadUsers();
+    const userId = req.params.id;
+
+    const user = users.find(u => u.id === userId);
+    if (!user) {
+        return res.status(404).json({ message: "User not found" });
+    }
+
+    // Возвращаем без пароля
+    const { password, ...safeUser } = user;
+    res.json(safeUser);
+});
+
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
@@ -379,6 +394,63 @@ app.get('/hotels/name/:name', (req, res) => {
         res.status(500).json({ message: 'Ошибка загрузки данных для отеля' });
     }
 });
+
+app.post('/hotels/:id/reviews', (req, res) => {
+  const hotelId = parseInt(req.params.id);
+  const { review } = req.body;
+
+  if (!review || typeof review !== 'object' || !review.userId || !review.id) {
+    return res.status(400).json({ error: 'Review must include userId and id' });
+  }
+
+  // Отзыв, который попадет в базы с отелями
+  const publicReview = {
+    id: review.id,
+    firstName: review.firstName,
+    rating: review.rating,
+    date: review.date,
+    comment: review.comment
+  };
+
+  const addReviewToHotelData = (lang) => {
+    const filePath = path.join(__dirname, `db${lang.toUpperCase()}.json`);
+    if (!fs.existsSync(filePath)) throw new Error(`File for lang ${lang} not found`);
+
+    const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+    const hotel = data.hotels.find(h => h.id === hotelId);
+    if (!hotel) throw new Error(`Hotel with id ${hotelId} not found in lang ${lang}`);
+
+    if (!Array.isArray(hotel.reviews)) hotel.reviews = [];
+    hotel.reviews.push(publicReview);
+
+    fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
+  };
+
+  const addReviewToUser = (userId, reviewId) => {
+    if (!fs.existsSync(USERS_FILE)) throw new Error(`Users file not found`);
+
+    const users = JSON.parse(fs.readFileSync(USERS_FILE, 'utf8'));
+    const user = users.find(u => u.id === userId);
+    if (!user) throw new Error(`User with id ${userId} not found`);
+
+    if (!Array.isArray(user.reviews)) user.reviews = [];
+    if (!user.reviews.includes(reviewId)) user.reviews.push(reviewId);
+
+    fs.writeFileSync(USERS_FILE, JSON.stringify(users, null, 2));
+  };
+
+  try {
+    addReviewToHotelData('en');
+    addReviewToHotelData('ua');
+    addReviewToUser(review.userId, review.id);
+
+    res.status(200).json({ message: 'Review successfully saved to hotels and user' });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: error.message });
+  }
+});
+
 
 const PORT = 3001;
 app.listen(PORT, () => {

@@ -12,15 +12,19 @@ import ReservedList from "./ReservedList";
 import styles from "./index.module.scss"
 
 interface User {
-    name: string;
-    email: string;
-    img?: string;
+  id: string;
+  name: string;
+  email: string;
+  img: string;
+  reviews?: number[];
 }
 
 interface UserInfo {
     name: string;
     email: string;
     picture?: string;
+    id: string;
+    reviews?: number[];
 }
 
 export default function Profile() {
@@ -43,7 +47,7 @@ export default function Profile() {
         }
         return "";
     }, [API_BASE_URL]);
-    
+
     useEffect(() => {
         const storedUserInfo = localStorage.getItem("user");
 
@@ -52,14 +56,13 @@ export default function Profile() {
                 name: user.name,
                 email: user.email,
                 picture: getAvatarUrl(user),
+                id: user.id,
+                reviews: user.reviews
             });
         } else if (storedUserInfo) {
             setUserInfo(JSON.parse(storedUserInfo));
         }
     }, [user, getAvatarUrl]);
-    
-    console.log("user Info", userInfo)
-    console.log("state user", user)
 
     const handleToggleForm = () => {
         setVisible((prevVisible) => !prevVisible);
@@ -73,7 +76,7 @@ export default function Profile() {
     const handleOk = async () => {
         setModalText('Deleting avatar...');
         setConfirmLoading(true);
-    
+
         try {
             const token = localStorage.getItem('token');
             const response = await axios.post(
@@ -85,7 +88,7 @@ export default function Profile() {
                     },
                 }
             );
-    
+
             if (response.status === 200) {
                 message.success('Avatar deleted successfully');
                 setUserInfo((prevUserInfo) => {
@@ -107,15 +110,15 @@ export default function Profile() {
             setOpen(false);
         }
     };
-    
+
     const handleCancel = () => {
         setOpen(false);
     };
 
     return (
-        <div style={{padding: "0 20px"}}>
+        <div style={{ padding: "0 20px" }}>
             {userInfo ? (
-                <div>
+                <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
                     <h2>{t("hello")}, {userInfo.name}</h2>
                     <p>{t("email")}: {userInfo.email}</p>
                     <Avatar
@@ -143,7 +146,7 @@ export default function Profile() {
             ) : (
                 <p>{t("notAuthorized")}</p>
             )}
-            <ReservedList />
+            <ReservedList user={userInfo} />
         </div>
     );
 }

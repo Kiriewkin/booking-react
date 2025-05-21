@@ -5,26 +5,9 @@ import { HeartOutlined, HeartFilled } from "@ant-design/icons";
 import { t } from "i18next";
 
 import { getLocalStorage, setLocalStorage } from "../../utils/localStorage";
+import { HotelProps, Hotel } from "../../types/hotels";
 
 import "./index.scss";
-
-type Hotel = {
-    id: number;
-    name: string;
-    city: string;
-    address: string;
-    state: string;
-    country_code: string;
-    hotel_rating: number;
-    phone_number: string | null;
-    website: string | null;
-    img: string;
-    price: number
-};
-
-type HotelProps = {
-    hotel: Hotel;
-};
 
 const HotelsItem: React.FC<HotelProps> = ({ hotel }) => {
     const [isFavorite, setIsFavorite] = useState<boolean>(false);

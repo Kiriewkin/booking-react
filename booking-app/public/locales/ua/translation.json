@@ -99,5 +99,11 @@
     "pay": "Оплатити",
     "paymentIsBeingProces": "Оплата обробляється...",
     "paymentWasSuccessful": "Оплата пройшла успішно!",
-    "yourPaymentProcessed": "Ваш платіж оброблено."
+    "yourPaymentProcessed": "Ваш платіж оброблено.",
+    "hotelReviews": "Відгуки про готелі",
+    "noReviews": "Немає відгуків",
+    "hotelName": "Назва готелю",
+    "addReview": "Додати відгук",
+    "city": "Місто",
+    "hello": "Привіт"
 }

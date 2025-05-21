@@ -4,6 +4,7 @@ import { Button, Col, Row } from "antd";
 import { RootState } from "../../store";
 
 import HotelsItem from "./HotelsItem";
+import { Review } from "../../types/hotels";
 
 type Hotel = {
     id: number;
@@ -17,6 +18,7 @@ type Hotel = {
     website: string | null;
     img: string;
     price: number;
+    reviews: Review[];
 };
 
 export default function HotelsList() {

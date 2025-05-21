@@ -4,20 +4,7 @@ import { Row, Col, Button, Popover } from "antd";
 import { useTranslation } from "react-i18next";
 import { clearLocalStorage, getLocalStorage } from "../../utils/localStorage";
 import HotelsItem from "../Hotels/HotelsItem";
-
-type Hotel = {
-    id: number;
-    name: string;
-    city: string;
-    address: string;
-    state: string;
-    country_code: string;
-    hotel_rating: number;
-    phone_number: string | null;
-    website: string | null;
-    img: string;
-    price: number
-};
+import { Hotel } from "../../types/hotels";
 
 export default function FavoritesList() {
     const [favorites, setFavorites] = useState<Hotel[]>([]);
