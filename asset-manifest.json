@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/booking-react/static/css/main.b44e038d.css",
-    "main.js": "/booking-react/static/js/main.f4c907e4.js",
+    "main.js": "/booking-react/static/js/main.e91c5336.js",
     "static/js/487.8f1d3136.chunk.js": "/booking-react/static/js/487.8f1d3136.chunk.js",
     "static/media/logo.svg": "/booking-react/static/media/logo.a62b708b627069603b57c87cd4132fc5.svg",
     "static/media/worldLang.svg": "/booking-react/static/media/worldLang.9f7b569ef4573f4e31f440e31d109fbc.svg",
@@ -9,6 +9,6 @@
   },
   "entrypoints": [
     "static/css/main.b44e038d.css",
-    "static/js/main.f4c907e4.js"
+    "static/js/main.e91c5336.js"
   ]
 }
