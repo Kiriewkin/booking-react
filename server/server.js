@@ -343,14 +343,23 @@ app.get("/hotel/:id", (req, res) => {
 
 app.post('/hotels', (req, res) => {
     const { city, lang } = req.body;
+    console.log("Request body:", req.body);
+
+    const filePath = path.join(__dirname, `db${(lang || 'en').toUpperCase()}.json`);
+    console.log("Looking for file:", filePath);
+
     const data = loadData(lang || 'en');
+
     if (data) {
         const hotels = data.hotels.filter((hotel) => hotel.city === city);
+        console.log(`Found ${hotels.length} hotels in city: ${city}`);
         res.json(hotels);
     } else {
-        res.status(500).json({ message: 'Ошибка загрузки данных для отелей по городу' });
+        console.log("Failed to load data for lang:", lang);
+        res.status(500).json({ message: 'Ошибка загрузки данных' });
     }
 });
+
 
 app.get('/hotels/city/:city', (req, res) => {
     const { city } = req.params;
